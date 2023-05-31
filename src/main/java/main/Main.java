@@ -4,6 +4,8 @@
  */
 package main;
 
+import main.vehiclePlantBu.VehiclePlant;
+
 /**
  *
  * @author JendersonQ
@@ -19,7 +21,7 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        vpBu = new VehiclePlant("test", 12, 24, 30);
+        vpBu = new VehiclePlant("test", 12, 6, 20);
     }
     
 }

@@ -46,8 +46,10 @@ public class VehiclePlant {
     private int countWorkerRueda;
     private int countWorkerAccesorio;
     private int countWorkerEnsamblador;
-    private final int countWorkerDirector = 0;
+    private final int countWorkerDirector = 1;
     private final int countWorkerGerente = 1;
+    
+    public String statusGerente;
 
     private final String[] typeWorkers = {"GERENTE", "CHASIS", "CARROCERIA", "MOTOR", "RUEDA", "ACCESORIO", "ENSAMBLADOR", "DIRECTOR"};
 
@@ -71,18 +73,19 @@ public class VehiclePlant {
         this.hourPassed = 0;
 
         // Mover estos contadores a DATOS INICIALES
-//        this.countWorkerChasis = 2;
-//        this.countWorkerCarroceria = 2;
-//        this.countWorkerMotor = 1;
-//        this.countWorkerRueda = 1;
-//        this.countWorkerAccesorio = 2;
-//        this.countWorkerEnsamblador = 2;
-        this.countWorkerChasis = 0;
-        this.countWorkerCarroceria = 0;
-        this.countWorkerMotor = 0;
-        this.countWorkerRueda = 0;
-        this.countWorkerAccesorio = 0;
-        this.countWorkerEnsamblador = 0;
+        this.countWorkerChasis = 2;
+        this.countWorkerCarroceria = 2;
+        this.countWorkerMotor = 1;
+        this.countWorkerRueda = 1;
+        this.countWorkerAccesorio = 2;
+        this.countWorkerEnsamblador = 2;
+//        this.countWorkerChasis = 0;
+//        this.countWorkerCarroceria = 0;
+//        this.countWorkerMotor = 0;
+//        this.countWorkerRueda = 0;
+//        this.countWorkerAccesorio = 0;
+//        this.countWorkerEnsamblador = 0;
+        this.statusGerente = "";
 
         this.startPlant();
     }
@@ -97,8 +100,8 @@ public class VehiclePlant {
 //            System.out.println("Carrocerias creadas: " + this.warehouse.currentStorageCarroceria);
 //            System.out.println("Ruedas creadas: " + this.warehouse.currentStorageRueda);
 //            System.out.println("Accesorios creados: " + this.warehouse.currentStorageAccesorio);
-//            System.out.println("Vehiculos S: " + this.warehouse.currentStorageVehicleStandard);
-//            System.out.println("Vehiculos Spe: " + this.warehouse.currentStorageVehicleSpecial);
+            System.out.println("Vehiculos S: " + this.warehouse.currentStorageVehicleStandard);
+            System.out.println("Vehiculos Spe: " + this.warehouse.currentStorageVehicleSpecial);
             System.out.println("Dias transcurridos: " + this.daysPassed);
             for (int hour = 0; hour < this.dayDurationInMs; hour += (this.dayDurationInMs / 24)) {
                 try {
@@ -109,7 +112,7 @@ public class VehiclePlant {
                         this.updateWorkers();
                     }
 
-                    Thread.sleep((this.dayDurationInMs / 24) + 10); // Factor de tiempo agregado por procesos internos
+                    Thread.sleep((this.dayDurationInMs / 24)); // Factor de tiempo agregado por procesos internos
                 } catch (InterruptedException e) {
                     System.out.println(e);
                 }
@@ -236,6 +239,10 @@ public class VehiclePlant {
 
     private void stopAllWorkers() {
         this.workers.forEach(w -> w.stopWork());
+    }
+    
+    public void updateEarnings(int newEarnings) {
+        this.earnings += newEarnings;
     }
 
 

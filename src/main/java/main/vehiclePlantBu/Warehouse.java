@@ -25,6 +25,9 @@ public class Warehouse {
     public int currentStorageVehicleStandard;
     private int counterVeStandard;
     public int currentStorageVehicleSpecial;
+    
+    private int standardVehiclesSave;
+    private int specialVehiclesSave;
 
     private final int requireChasis = 1;
     private final int requireCarroceria = 2;
@@ -141,6 +144,37 @@ public class Warehouse {
             this.readyStartVeSpecial = true;
             this.counterVeStandard -= 5;
         }
+    }
+    
+    public int getSpecialVehicles() {
+        return this.currentStorageVehicleSpecial;
+    }
+    
+    public int getStandardVehicles() {
+        return this.currentStorageVehicleStandard;
+    }
+    
+    public void sendVechicles() {
+        this.currentStorageVehicleStandard = 0;
+        this.currentStorageVehicleSpecial = 0;
+    }
+    
+    public int getStandardVehicleSaved(){
+        return this.standardVehiclesSave;
+    }
+    
+    public int getSpecialVehicleSaved(){
+        return this.specialVehiclesSave;
+    }
+    
+    public void setVehiclesSaved(int standardVehicles, int specialVehicles) {
+        this.standardVehiclesSave = standardVehicles;
+        this.specialVehiclesSave = specialVehicles;
+    }
+    
+    public void resetVehiclesSaved() {
+        this.standardVehiclesSave = 0;
+        this.specialVehiclesSave = 0;
     }
 
 }
