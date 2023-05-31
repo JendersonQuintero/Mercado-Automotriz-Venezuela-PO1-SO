@@ -10,17 +10,16 @@ package main;
  */
 public class Main {
 
-    
+    public static VehiclePlant vpBu;
+    public static VehiclePlant vpLa;
+
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         
-        
-        
-        
-        
+        vpBu = new VehiclePlant("test", 12, 24, 30);
     }
     
 }
