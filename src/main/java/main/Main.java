@@ -4,6 +4,8 @@
  */
 package main;
 
+import main.vehiclePlantBu.VehiclePlant;
+
 /**
  *
  * @author JendersonQ
