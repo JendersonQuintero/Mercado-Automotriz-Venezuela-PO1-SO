@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package main.vehiclePlantBu;
+package main;
 
 import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
@@ -13,10 +13,10 @@ import java.util.concurrent.Semaphore;
  */
 public class VehiclePlant {
 
-    private String name;
-    private ArrayList<Worker> workers;
-    private int maxWorkers;
-    private long dayDurationInMs;
+    public String name;
+    public ArrayList<Worker> workers;
+    public final int maxWorkers = 12;
+    public long dayDurationInMs;
     public int deadline;
 
     public int daysPassed;
@@ -30,8 +30,8 @@ public class VehiclePlant {
 
     // Almacen y precio de vehiculos
     public Warehouse warehouse;
-    public int priceVehicleStandard = 550000;
-    public int priceVehicleSpecial = 600000;
+    public int priceVehicleStandard;
+    public int priceVehicleSpecial;
 
     public int deliveryDay;
 
@@ -51,15 +51,35 @@ public class VehiclePlant {
 
     private final String[] typeWorkers = {"DIRECTOR", "GERENTE", "CHASIS", "CARROCERIA", "MOTOR", "RUEDA", "ACCESORIO", "ENSAMBLADOR"};
 
-    public VehiclePlant(String name, int maxWorkers, long durationInS, int deadline) {
+    public VehiclePlant(String plant, long durationInS, int deadline, int iChasis, int iCarroceria, int iMotor, int iRueda, int iAccesorio, int iEnsamblador) {
+        
+        this.name = plant;
+        
+        switch (plant) {
+            case "BUGATTI" -> {
+                this.priceVehicleStandard = 550000;
+                this.priceVehicleSpecial = 600000;
+            }
+            default -> {
+                this.priceVehicleStandard = 400000;
+                this.priceVehicleSpecial = 750000;
+            }
+        }
+        
+        this.warehouse = new Warehouse(this);
+        this.countWorkerChasis = iChasis;
+        this.countWorkerCarroceria = iCarroceria;
+        this.countWorkerMotor = iMotor;
+        this.countWorkerRueda = iRueda;
+        this.countWorkerAccesorio = iAccesorio;
+        this.countWorkerEnsamblador = iEnsamblador;
+
         this.sem = new Semaphore(1);
-        this.name = name;
-        this.maxWorkers = maxWorkers;
         this.dayDurationInMs = durationInS * 1000;
         this.deadline = deadline;
         this.deliveryDay = this.deadline;
         this.workers = new ArrayList<>(this.maxWorkers);
-        this.warehouse = new Warehouse();
+        
 
         this.updateWorkersNow = true;
         this.stopPlant = false;
@@ -70,20 +90,6 @@ public class VehiclePlant {
         this.daysPassed = 0;
         this.hourPassed = 0;
 
-        // Mover estos contadores a DATOS INICIALES
-        this.countWorkerChasis = 2;
-        this.countWorkerCarroceria = 2;
-        this.countWorkerMotor = 1;
-        this.countWorkerRueda = 1;
-        this.countWorkerAccesorio = 2;
-        this.countWorkerEnsamblador = 2;
-//        this.countWorkerChasis = 0;
-//        this.countWorkerCarroceria = 0;
-//        this.countWorkerMotor = 0;
-//        this.countWorkerRueda = 0;
-//        this.countWorkerAccesorio = 0;
-//        this.countWorkerEnsamblador = 0;
-
         this.startPlant();
     }
 
@@ -92,20 +98,11 @@ public class VehiclePlant {
 
         while (this.continuePlant()) {
 
-//            System.out.println("Chasis creados: " + this.warehouse.currentStorageChasis);
-//            System.out.println("Motores creados: " + this.warehouse.currentStorageMotor);
-//            System.out.println("Carrocerias creadas: " + this.warehouse.currentStorageCarroceria);
-//            System.out.println("Ruedas creadas: " + this.warehouse.currentStorageRueda);
-//            System.out.println("Accesorios creados: " + this.warehouse.currentStorageAccesorio);
-            System.out.println("Vehiculos S: " + this.warehouse.currentStorageVehicleStandard);
-            System.out.println("Vehiculos Spe: " + this.warehouse.currentStorageVehicleSpecial);
-            System.out.println("Dias transcurridos: " + this.daysPassed);
             for (int hour = 0; hour < this.dayDurationInMs; hour += (this.dayDurationInMs / 24)) {
                 try {
                     this.hourPassed = hour;
 
                     if (this.updateWorkersNow) {
-                        System.out.println("Actualizó los trabajadores");
                         this.updateWorkers();
                     }
 

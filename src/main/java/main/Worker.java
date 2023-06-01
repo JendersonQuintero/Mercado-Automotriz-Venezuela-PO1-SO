@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package main.vehiclePlantBu;
+package main;
 
 /**
  *
@@ -205,7 +205,7 @@ public class Worker extends Thread {
                 this.checkAccounting();
                 sleep((hour / 2));
             } else {
-                this.statusGerente = "Actualizando dias restantes a entrega";
+                this.statusGerente = "Actualizando dias restantes para entrega";
                 this.updateRemainingDays();
                 if (this.counterHoursGerente == (hour * 24)) {
                     this.counterHoursGerente = 0;
