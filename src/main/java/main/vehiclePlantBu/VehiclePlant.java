@@ -48,10 +48,8 @@ public class VehiclePlant {
     private int countWorkerEnsamblador;
     private final int countWorkerDirector = 1;
     private final int countWorkerGerente = 1;
-    
-    public String statusGerente;
 
-    private final String[] typeWorkers = {"GERENTE", "CHASIS", "CARROCERIA", "MOTOR", "RUEDA", "ACCESORIO", "ENSAMBLADOR", "DIRECTOR"};
+    private final String[] typeWorkers = {"DIRECTOR", "GERENTE", "CHASIS", "CARROCERIA", "MOTOR", "RUEDA", "ACCESORIO", "ENSAMBLADOR"};
 
     public VehiclePlant(String name, int maxWorkers, long durationInS, int deadline) {
         this.sem = new Semaphore(1);
@@ -85,7 +83,6 @@ public class VehiclePlant {
 //        this.countWorkerRueda = 0;
 //        this.countWorkerAccesorio = 0;
 //        this.countWorkerEnsamblador = 0;
-        this.statusGerente = "";
 
         this.startPlant();
     }
@@ -192,7 +189,6 @@ public class VehiclePlant {
                             this.workers.remove(w);
                         }
                     }
-
                 }
             }
         }
@@ -243,6 +239,13 @@ public class VehiclePlant {
     
     public void updateEarnings(int newEarnings) {
         this.earnings += newEarnings;
+    }
+    
+    public Worker checkWorker(String type) {
+        return switch (type) {
+            case "GERENTE" -> this.workers.get(1);
+            default -> this.workers.get(0);
+        };
     }
 
 

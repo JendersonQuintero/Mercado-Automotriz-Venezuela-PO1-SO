@@ -46,6 +46,8 @@ public class Worker extends Thread {
     // Parameters director
     public double counterHoursDirector;
     public boolean saveCars;
+    public boolean watchGerente;
+    public String statusDirector;
 
     private int salaryPerHour;
     private double productionPerHour;
@@ -98,6 +100,8 @@ public class Worker extends Thread {
                 this.salaryPerHour = this.salaryPerHourDirector;
                 this.counterHoursDirector = 0;
                 this.saveCars = true;
+                this.watchGerente = true;
+                this.statusDirector = "";
             }
         }
     }
@@ -193,15 +197,15 @@ public class Worker extends Thread {
             this.counterHoursGerente += hour;
             System.out.println(this.counterHoursGerente);
             if (this.counterHoursGerente <= (hour * 16)) {
-                this.vp.statusGerente = "Viendo carreras";
+                this.statusGerente = "Viendo carreras";
                 this.isWatchRaincing = true;
                 this.timeWatchRaicing += (hour / 2);
                 sleep((hour / 2));
-                this.vp.statusGerente = "Revisando contabilidad";
+                this.statusGerente = "Revisando contabilidad";
                 this.checkAccounting();
                 sleep((hour / 2));
             } else {
-                this.vp.statusGerente = "Actualizando dias restantes a entrega";
+                this.statusGerente = "Actualizando dias restantes a entrega";
                 this.updateRemainingDays();
                 if (this.counterHoursGerente == (hour * 24)) {
                     this.counterHoursGerente = 0;
@@ -215,11 +219,12 @@ public class Worker extends Thread {
         }
     }
 
+    @SuppressWarnings("SleepWhileInLoop")
     private void directorWorker(long hour) {
         try {
-            if (this.vp.deliveryDay <= 0) {
-                System.out.println("El director está enviando los vehiculos");
+            if (this.vp.deliveryDay == 0) {
                 this.counterHoursDirector += hour;
+                this.statusDirector = "Enviado vehiculos al concesionario";
                 if (this.saveCars) {
                     this.vp.warehouse.setVehiclesSaved(this.vp.warehouse.getStandardVehicles(), this.vp.warehouse.getSpecialVehicles());
                     this.vp.sem.acquire();
@@ -227,17 +232,42 @@ public class Worker extends Thread {
                     this.vp.sem.release();
                     this.saveCars = false;
                 }
-                if (this.counterHoursDirector >= (hour * 24)) {
+                if (this.counterHoursDirector > (hour * 24)) {
                     int earnings = (this.vp.warehouse.getStandardVehicleSaved() * this.vp.priceVehicleStandard) + (this.vp.warehouse.getSpecialVehicleSaved() * this.vp.priceVehicleSpecial);
                     this.vp.warehouse.resetVehiclesSaved();
                     this.vp.updateEarnings(earnings);
                     this.vp.deliveryDay = this.vp.deadline;
-                    System.out.println("El director registró las ganancias");
-                    System.out.println("Ganancias: " + this.vp.earnings);
+                    this.counterHoursDirector = 0;
                 }
                 sleep(hour);
             } else {
-                sleep(hour);
+                this.counterHoursDirector += hour;
+                double randomNum = Math.floor((Math.random()*10 + 1));
+                
+                if (this.counterHoursDirector == (hour * 24)) {
+                    this.watchGerente = true;
+                    this.counterHoursDirector = 0;
+                }
+                
+                if (randomNum > 8 && this.watchGerente) {
+                    double minutes = (hour / 60);
+                    boolean checkFoul = true;
+                    for (double i = minutes; i <= (minutes*25); i += minutes) {
+                        this.statusDirector = "Observando al gerente";
+                        if (this.vp.checkWorker("GERENTE").statusGerente.equals("Viendo carreras") && checkFoul) {
+                            this.foulGerente++;
+                            this.discountGerente(this.vp.checkWorker("GERENTE"), 50);
+                            checkFoul = false;
+                        } 
+                        sleep((long)minutes);
+                    }
+                    this.statusDirector = "Realizando labores administrativas";
+                    sleep((long)(minutes * 35));
+                    this.watchGerente = false;
+                } else {
+                    this.statusDirector = "Realizando labores administrativas";
+                    sleep(hour);
+                }
             }
         } catch (InterruptedException ex) {
             System.out.println(ex);
@@ -258,6 +288,10 @@ public class Worker extends Thread {
     private void payWorker() {
         this.currentGain += this.salaryPerHour;
         this.vp.operCost += this.salaryPerHour;
+    }
+    
+    private void discountGerente(Worker w, int mount) {
+        w.currentGain -= mount;
     }
 
 }

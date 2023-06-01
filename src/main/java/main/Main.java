@@ -21,7 +21,7 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        vpBu = new VehiclePlant("test", 12, 6, 20);
+        vpBu = new VehiclePlant("test", 12, 72, 20);
     }
     
 }
