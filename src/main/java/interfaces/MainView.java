@@ -54,31 +54,57 @@ public class MainView extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
+        titulo16 = new javax.swing.JLabel();
+        titulo17 = new javax.swing.JLabel();
+        jTextField15 = new javax.swing.JTextField();
+        jTextField16 = new javax.swing.JTextField();
+        jTextField17 = new javax.swing.JTextField();
+        titulo59 = new javax.swing.JLabel();
         panelAlmacenBugatti = new javax.swing.JPanel();
-        titulo22 = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        titulo23 = new javax.swing.JLabel();
-        titulo24 = new javax.swing.JLabel();
-        titulo25 = new javax.swing.JLabel();
-        titulo26 = new javax.swing.JLabel();
+        titulo40 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        titulo41 = new javax.swing.JLabel();
+        titulo42 = new javax.swing.JLabel();
+        titulo43 = new javax.swing.JLabel();
+        titulo44 = new javax.swing.JLabel();
+        titulo45 = new javax.swing.JLabel();
+        titulo46 = new javax.swing.JLabel();
+        titulo47 = new javax.swing.JLabel();
+        titulo48 = new javax.swing.JLabel();
+        jTextField25 = new javax.swing.JTextField();
+        jTextField26 = new javax.swing.JTextField();
+        jTextField27 = new javax.swing.JTextField();
+        jTextField28 = new javax.swing.JTextField();
+        jTextField29 = new javax.swing.JTextField();
+        jTextField30 = new javax.swing.JTextField();
+        jTextField31 = new javax.swing.JTextField();
+        panelDias = new javax.swing.JPanel();
+        jTextField21 = new javax.swing.JTextField();
+        titulo60 = new javax.swing.JLabel();
+        panelGerenteDirector = new javax.swing.JPanel();
+        titulo58 = new javax.swing.JLabel();
+        titulo62 = new javax.swing.JLabel();
         titulo27 = new javax.swing.JLabel();
         titulo28 = new javax.swing.JLabel();
         titulo29 = new javax.swing.JLabel();
-        titulo30 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
         jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
+        jTextField18 = new javax.swing.JTextField();
+        jTextField19 = new javax.swing.JTextField();
+        jTextField20 = new javax.swing.JTextField();
+        titulo33 = new javax.swing.JLabel();
+        panelEstadisticas = new javax.swing.JPanel();
+        titulo61 = new javax.swing.JLabel();
+        titulo30 = new javax.swing.JLabel();
+        titulo31 = new javax.swing.JLabel();
+        titulo32 = new javax.swing.JLabel();
+        jTextField22 = new javax.swing.JTextField();
+        jTextField23 = new javax.swing.JTextField();
+        jTextField32 = new javax.swing.JTextField();
         panelLamborguini = new javax.swing.JPanel();
         panelTituloLamborguini = new javax.swing.JPanel();
         titulo6 = new javax.swing.JLabel();
@@ -134,7 +160,7 @@ public class MainView extends javax.swing.JFrame {
         titulo3.setForeground(new java.awt.Color(0, 0, 0));
         titulo3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         titulo3.setText("Total de empleados:");
-        panelEmpleadosBugatti.add(titulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 150, -1));
+        panelEmpleadosBugatti.add(titulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 150, -1));
 
         titulo10.setBackground(new java.awt.Color(0, 0, 0));
         titulo10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -175,15 +201,25 @@ public class MainView extends javax.swing.JFrame {
         titulo15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         titulo15.setForeground(new java.awt.Color(0, 0, 0));
         titulo15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo15.setText("Ensambladores:");
-        panelEmpleadosBugatti.add(titulo15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 130, -1));
+        titulo15.setText("Director");
+        panelEmpleadosBugatti.add(titulo15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 130, -1));
 
         jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setText("jTextField1");
-        panelEmpleadosBugatti.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 50, 20));
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.setText("1");
+        jTextField1.setToolTipText("");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        panelEmpleadosBugatti.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 50, 20));
 
         jTextField2.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField2.setText("jTextField1");
+        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField2.setToolTipText("");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -192,11 +228,20 @@ public class MainView extends javax.swing.JFrame {
         panelEmpleadosBugatti.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 50, 20));
 
         jTextField3.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField3.setText("jTextField1");
+        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField3.setToolTipText("");
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
         panelEmpleadosBugatti.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 50, 20));
 
         jTextField4.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField4.setText("jTextField1");
+        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField4.setToolTipText("");
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
@@ -205,15 +250,21 @@ public class MainView extends javax.swing.JFrame {
         panelEmpleadosBugatti.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 50, 20));
 
         jTextField5.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField5.setText("jTextField1");
+        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField5.setToolTipText("");
         panelEmpleadosBugatti.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 50, 20));
 
         jTextField6.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField6.setText("jTextField1");
+        jTextField6.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField6.setToolTipText("");
         panelEmpleadosBugatti.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 50, 20));
 
         jTextField7.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField7.setText("jTextField1");
+        jTextField7.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField7.setToolTipText("");
         panelEmpleadosBugatti.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 50, 20));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
@@ -293,28 +344,6 @@ public class MainView extends javax.swing.JFrame {
         });
         panelEmpleadosBugatti.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 20, -1));
 
-        jButton9.setBackground(new java.awt.Color(255, 255, 255));
-        jButton9.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(0, 0, 0));
-        jButton9.setText("+");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-        panelEmpleadosBugatti.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 20, -1));
-
-        jButton10.setBackground(new java.awt.Color(255, 255, 255));
-        jButton10.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(0, 0, 0));
-        jButton10.setText("-");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-        panelEmpleadosBugatti.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 20, -1));
-
         jButton11.setBackground(new java.awt.Color(255, 255, 255));
         jButton11.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
         jButton11.setForeground(new java.awt.Color(0, 0, 0));
@@ -370,112 +399,313 @@ public class MainView extends javax.swing.JFrame {
         });
         panelEmpleadosBugatti.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 20, -1));
 
-        panelBugatti.add(panelEmpleadosBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 340, 270));
+        titulo16.setBackground(new java.awt.Color(0, 0, 0));
+        titulo16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo16.setForeground(new java.awt.Color(0, 0, 0));
+        titulo16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo16.setText("Ensambladores:");
+        panelEmpleadosBugatti.add(titulo16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 130, -1));
+
+        titulo17.setBackground(new java.awt.Color(0, 0, 0));
+        titulo17.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo17.setForeground(new java.awt.Color(0, 0, 0));
+        titulo17.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo17.setText("Gerente:");
+        panelEmpleadosBugatti.add(titulo17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
+
+        jTextField15.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField15.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField15.setText("1");
+        jTextField15.setToolTipText("");
+        panelEmpleadosBugatti.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 50, 20));
+
+        jTextField16.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField16.setText("jTextField1");
+        panelEmpleadosBugatti.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 50, 20));
+
+        jTextField17.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField17.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField17.setText("12");
+        jTextField17.setToolTipText("");
+        jTextField17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField17ActionPerformed(evt);
+            }
+        });
+        panelEmpleadosBugatti.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 50, 20));
+
+        titulo59.setBackground(new java.awt.Color(0, 0, 0));
+        titulo59.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        titulo59.setForeground(new java.awt.Color(0, 0, 0));
+        titulo59.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo59.setText("Gestion de Trabajo");
+        panelEmpleadosBugatti.add(titulo59, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 260, 20));
+
+        panelBugatti.add(panelEmpleadosBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 340, 350));
 
         panelAlmacenBugatti.setBackground(new java.awt.Color(0, 255, 153));
         panelAlmacenBugatti.setForeground(new java.awt.Color(0, 0, 0));
         panelAlmacenBugatti.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        titulo22.setBackground(new java.awt.Color(0, 0, 0));
-        titulo22.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        titulo22.setForeground(new java.awt.Color(0, 0, 0));
-        titulo22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titulo22.setText("Almacen");
-        panelAlmacenBugatti.add(titulo22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 260, 20));
+        titulo40.setBackground(new java.awt.Color(0, 0, 0));
+        titulo40.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        titulo40.setForeground(new java.awt.Color(0, 0, 0));
+        titulo40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo40.setText("Almacen");
+        panelAlmacenBugatti.add(titulo40, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 290, 20));
 
-        jPanel10.setBackground(new java.awt.Color(0, 255, 153));
-        jPanel10.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel12.setBackground(new java.awt.Color(0, 255, 153));
+        jPanel12.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        titulo23.setBackground(new java.awt.Color(0, 0, 0));
-        titulo23.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
-        titulo23.setForeground(new java.awt.Color(0, 0, 0));
-        titulo23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titulo23.setText("Estadisticas");
-        jPanel10.add(titulo23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 210, -1));
+        titulo41.setBackground(new java.awt.Color(0, 0, 0));
+        titulo41.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        titulo41.setForeground(new java.awt.Color(0, 0, 0));
+        titulo41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo41.setText("Estadisticas");
+        jPanel12.add(titulo41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 210, -1));
 
-        panelAlmacenBugatti.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 230, 140));
+        panelAlmacenBugatti.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 230, 140));
 
-        titulo24.setBackground(new java.awt.Color(0, 0, 0));
-        titulo24.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        titulo24.setForeground(new java.awt.Color(0, 0, 0));
-        titulo24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo24.setText("Vehiculos Especiales:");
-        panelAlmacenBugatti.add(titulo24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
+        titulo42.setBackground(new java.awt.Color(0, 0, 0));
+        titulo42.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo42.setForeground(new java.awt.Color(0, 0, 0));
+        titulo42.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo42.setText("Vehiculos Especiales:");
+        panelAlmacenBugatti.add(titulo42, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
 
-        titulo25.setBackground(new java.awt.Color(0, 0, 0));
-        titulo25.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        titulo25.setForeground(new java.awt.Color(0, 0, 0));
-        titulo25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo25.setText("Chasis:");
-        panelAlmacenBugatti.add(titulo25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 60, -1));
+        titulo43.setBackground(new java.awt.Color(0, 0, 0));
+        titulo43.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo43.setForeground(new java.awt.Color(0, 0, 0));
+        titulo43.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo43.setText("Chasis:");
+        panelAlmacenBugatti.add(titulo43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 60, -1));
 
-        titulo26.setBackground(new java.awt.Color(0, 0, 0));
-        titulo26.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        titulo26.setForeground(new java.awt.Color(0, 0, 0));
-        titulo26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo26.setText("Carrocerías:");
-        panelAlmacenBugatti.add(titulo26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 80, -1));
+        titulo44.setBackground(new java.awt.Color(0, 0, 0));
+        titulo44.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo44.setForeground(new java.awt.Color(0, 0, 0));
+        titulo44.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo44.setText("Carrocerías:");
+        panelAlmacenBugatti.add(titulo44, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 80, -1));
+
+        titulo45.setBackground(new java.awt.Color(0, 0, 0));
+        titulo45.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo45.setForeground(new java.awt.Color(0, 0, 0));
+        titulo45.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo45.setText("Motores:");
+        panelAlmacenBugatti.add(titulo45, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 80, -1));
+
+        titulo46.setBackground(new java.awt.Color(0, 0, 0));
+        titulo46.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo46.setForeground(new java.awt.Color(0, 0, 0));
+        titulo46.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo46.setText("Ruedas:");
+        panelAlmacenBugatti.add(titulo46, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 80, -1));
+
+        titulo47.setBackground(new java.awt.Color(0, 0, 0));
+        titulo47.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo47.setForeground(new java.awt.Color(0, 0, 0));
+        titulo47.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo47.setText("Accesorios:");
+        panelAlmacenBugatti.add(titulo47, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 80, -1));
+
+        titulo48.setBackground(new java.awt.Color(0, 0, 0));
+        titulo48.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo48.setForeground(new java.awt.Color(0, 0, 0));
+        titulo48.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo48.setText("Vehiculos Estandar:");
+        panelAlmacenBugatti.add(titulo48, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 130, -1));
+
+        jTextField25.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField25.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField25.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField25.setToolTipText("");
+        panelAlmacenBugatti.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 50, 20));
+
+        jTextField26.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField26.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField26.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField26.setToolTipText("");
+        panelAlmacenBugatti.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 50, 20));
+
+        jTextField27.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField27.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField27.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField27.setToolTipText("");
+        panelAlmacenBugatti.add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 50, 20));
+
+        jTextField28.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField28.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField28.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField28.setToolTipText("");
+        panelAlmacenBugatti.add(jTextField28, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 50, 20));
+
+        jTextField29.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField29.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField29.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField29.setToolTipText("");
+        panelAlmacenBugatti.add(jTextField29, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 50, 20));
+
+        jTextField30.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField30.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField30.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField30.setToolTipText("");
+        panelAlmacenBugatti.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 50, 20));
+
+        jTextField31.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField31.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField31.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField31.setToolTipText("");
+        panelAlmacenBugatti.add(jTextField31, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 50, 20));
+
+        panelBugatti.add(panelAlmacenBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 290, 270));
+
+        panelDias.setBackground(new java.awt.Color(0, 255, 153));
+        panelDias.setForeground(new java.awt.Color(0, 0, 0));
+        panelDias.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextField21.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField21.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField21.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField21.setToolTipText("");
+        panelDias.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 80, 30));
+
+        titulo60.setBackground(new java.awt.Color(0, 0, 0));
+        titulo60.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        titulo60.setForeground(new java.awt.Color(0, 0, 0));
+        titulo60.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo60.setText("Dias para la Entrega");
+        panelDias.add(titulo60, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 20));
+
+        panelBugatti.add(panelDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 290, 70));
+
+        panelGerenteDirector.setBackground(new java.awt.Color(0, 255, 153));
+        panelGerenteDirector.setForeground(new java.awt.Color(0, 0, 0));
+        panelGerenteDirector.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        titulo58.setBackground(new java.awt.Color(0, 0, 0));
+        titulo58.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        titulo58.setForeground(new java.awt.Color(0, 0, 0));
+        titulo58.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo58.setText("del Gerente y Director");
+        panelGerenteDirector.add(titulo58, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 280, 20));
+
+        titulo62.setBackground(new java.awt.Color(0, 0, 0));
+        titulo62.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        titulo62.setForeground(new java.awt.Color(0, 0, 0));
+        titulo62.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo62.setText("Gestion de Trabajo");
+        panelGerenteDirector.add(titulo62, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 280, 20));
 
         titulo27.setBackground(new java.awt.Color(0, 0, 0));
         titulo27.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         titulo27.setForeground(new java.awt.Color(0, 0, 0));
         titulo27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo27.setText("Motores:");
-        panelAlmacenBugatti.add(titulo27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 80, -1));
+        titulo27.setText("Qué está haciendo el Director:");
+        panelGerenteDirector.add(titulo27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 200, -1));
 
         titulo28.setBackground(new java.awt.Color(0, 0, 0));
         titulo28.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         titulo28.setForeground(new java.awt.Color(0, 0, 0));
         titulo28.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo28.setText("Ruedas:");
-        panelAlmacenBugatti.add(titulo28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 80, -1));
+        titulo28.setText("Faltas del Gerente:");
+        panelGerenteDirector.add(titulo28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 120, -1));
 
         titulo29.setBackground(new java.awt.Color(0, 0, 0));
         titulo29.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         titulo29.setForeground(new java.awt.Color(0, 0, 0));
         titulo29.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo29.setText("Accesorios:");
-        panelAlmacenBugatti.add(titulo29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 80, -1));
+        titulo29.setText("Dinero descontado:");
+        panelGerenteDirector.add(titulo29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 130, -1));
+
+        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField10.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField10.setToolTipText("");
+        panelGerenteDirector.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 110, 20));
+
+        jTextField18.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField18.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField18.setToolTipText("");
+        panelGerenteDirector.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 240, 20));
+
+        jTextField19.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField19.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField19.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField19.setToolTipText("");
+        panelGerenteDirector.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 240, 20));
+
+        jTextField20.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField20.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField20.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField20.setToolTipText("");
+        panelGerenteDirector.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 110, 20));
+
+        titulo33.setBackground(new java.awt.Color(0, 0, 0));
+        titulo33.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo33.setForeground(new java.awt.Color(0, 0, 0));
+        titulo33.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo33.setText("Qué está haciendo el Gerente de Op:");
+        panelGerenteDirector.add(titulo33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 260, -1));
+
+        panelBugatti.add(panelGerenteDirector, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, 290, 240));
+
+        panelEstadisticas.setBackground(new java.awt.Color(0, 255, 153));
+        panelEstadisticas.setForeground(new java.awt.Color(0, 0, 0));
+        panelEstadisticas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        titulo61.setBackground(new java.awt.Color(0, 0, 0));
+        titulo61.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        titulo61.setForeground(new java.awt.Color(0, 0, 0));
+        titulo61.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo61.setText("Estadisticas");
+        panelEstadisticas.add(titulo61, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 340, 20));
 
         titulo30.setBackground(new java.awt.Color(0, 0, 0));
         titulo30.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         titulo30.setForeground(new java.awt.Color(0, 0, 0));
         titulo30.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo30.setText("Vehiculos Estandar:");
-        panelAlmacenBugatti.add(titulo30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 130, -1));
+        titulo30.setText("Ganancias en bruto:");
+        panelEstadisticas.add(titulo30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 130, -1));
 
-        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField8.setText("jTextField1");
-        panelAlmacenBugatti.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 50, 20));
+        titulo31.setBackground(new java.awt.Color(0, 0, 0));
+        titulo31.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo31.setForeground(new java.awt.Color(0, 0, 0));
+        titulo31.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo31.setText("Costos Operativos:");
+        panelEstadisticas.add(titulo31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 130, -1));
 
-        jTextField9.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField9.setText("jTextField1");
-        panelAlmacenBugatti.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 50, 20));
+        titulo32.setBackground(new java.awt.Color(0, 0, 0));
+        titulo32.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo32.setForeground(new java.awt.Color(0, 0, 0));
+        titulo32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo32.setText("Utilidades:");
+        panelEstadisticas.add(titulo32, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 120, -1));
 
-        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField10.setText("jTextField1");
-        panelAlmacenBugatti.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 50, 20));
+        jTextField22.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField22.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField22.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField22.setToolTipText("");
+        panelEstadisticas.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 150, 20));
 
-        jTextField11.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField11.setText("jTextField1");
-        panelAlmacenBugatti.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 50, 20));
+        jTextField23.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField23.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField23.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField23.setToolTipText("");
+        panelEstadisticas.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 150, 20));
 
-        jTextField12.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField12.setText("jTextField1");
-        panelAlmacenBugatti.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 50, 20));
+        jTextField32.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField32.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField32.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField32.setToolTipText("");
+        panelEstadisticas.add(jTextField32, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 150, 20));
 
-        jTextField13.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField13.setText("jTextField1");
-        panelAlmacenBugatti.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 50, 20));
+        panelBugatti.add(panelEstadisticas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 340, 140));
 
-        jTextField14.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField14.setText("jTextField1");
-        panelAlmacenBugatti.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 50, 20));
-
-        panelBugatti.add(panelAlmacenBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, 260, 270));
-
-        panelPantalla.add(panelBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 690, 620));
+        panelPantalla.add(panelBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 690, 690));
 
         panelLamborguini.setBackground(new java.awt.Color(255, 153, 153));
         panelLamborguini.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -493,13 +723,13 @@ public class MainView extends javax.swing.JFrame {
 
         panelLamborguini.add(panelTituloLamborguini, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 690, 40));
 
-        panelPantalla.add(panelLamborguini, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, 683, 620));
+        panelPantalla.add(panelLamborguini, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, 683, 690));
 
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Iniciar Simulación");
-        panelPantalla.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 700, 370, 30));
+        panelPantalla.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 740, 370, 30));
 
         titulo2.setBackground(new java.awt.Color(0, 0, 0));
         titulo2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
@@ -564,14 +794,6 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
-
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
@@ -591,6 +813,18 @@ public class MainView extends javax.swing.JFrame {
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField17ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -629,7 +863,6 @@ public class MainView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
@@ -642,25 +875,38 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField17;
+    private javax.swing.JTextField jTextField18;
+    private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField20;
+    private javax.swing.JTextField jTextField21;
+    private javax.swing.JTextField jTextField22;
+    private javax.swing.JTextField jTextField23;
+    private javax.swing.JTextField jTextField25;
+    private javax.swing.JTextField jTextField26;
+    private javax.swing.JTextField jTextField27;
+    private javax.swing.JTextField jTextField28;
+    private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField30;
+    private javax.swing.JTextField jTextField31;
+    private javax.swing.JTextField jTextField32;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JPanel panelAlmacenBugatti;
     private javax.swing.JPanel panelBugatti;
+    private javax.swing.JPanel panelDias;
     private javax.swing.JPanel panelEmpleadosBugatti;
+    private javax.swing.JPanel panelEstadisticas;
+    private javax.swing.JPanel panelGerenteDirector;
     private javax.swing.JPanel panelLamborguini;
     private javax.swing.JPanel panelPantalla;
     private javax.swing.JPanel panelTituloBugatti;
@@ -671,20 +917,34 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel titulo13;
     private javax.swing.JLabel titulo14;
     private javax.swing.JLabel titulo15;
+    private javax.swing.JLabel titulo16;
+    private javax.swing.JLabel titulo17;
     private javax.swing.JLabel titulo2;
-    private javax.swing.JLabel titulo22;
-    private javax.swing.JLabel titulo23;
-    private javax.swing.JLabel titulo24;
-    private javax.swing.JLabel titulo25;
-    private javax.swing.JLabel titulo26;
     private javax.swing.JLabel titulo27;
     private javax.swing.JLabel titulo28;
     private javax.swing.JLabel titulo29;
     private javax.swing.JLabel titulo3;
     private javax.swing.JLabel titulo30;
+    private javax.swing.JLabel titulo31;
+    private javax.swing.JLabel titulo32;
+    private javax.swing.JLabel titulo33;
     private javax.swing.JLabel titulo4;
+    private javax.swing.JLabel titulo40;
+    private javax.swing.JLabel titulo41;
+    private javax.swing.JLabel titulo42;
+    private javax.swing.JLabel titulo43;
+    private javax.swing.JLabel titulo44;
+    private javax.swing.JLabel titulo45;
+    private javax.swing.JLabel titulo46;
+    private javax.swing.JLabel titulo47;
+    private javax.swing.JLabel titulo48;
     private javax.swing.JLabel titulo5;
+    private javax.swing.JLabel titulo58;
+    private javax.swing.JLabel titulo59;
     private javax.swing.JLabel titulo6;
+    private javax.swing.JLabel titulo60;
+    private javax.swing.JLabel titulo61;
+    private javax.swing.JLabel titulo62;
     private javax.swing.JLabel tituloPrincipal;
     // End of variables declaration//GEN-END:variables
 }
