@@ -195,7 +195,6 @@ public class Worker extends Thread {
     private void gerenteWorker(long hour) {
         try {
             this.counterHoursGerente += hour;
-            System.out.println(this.counterHoursGerente);
             if (this.counterHoursGerente <= (hour * 16)) {
                 this.statusGerente = "Viendo carreras";
                 this.isWatchRaincing = true;
@@ -211,7 +210,6 @@ public class Worker extends Thread {
                     this.counterHoursGerente = 0;
                     this.counterDaysGerente++;
                 }
-                System.out.println("Dias restantes: " + this.vp.deliveryDay);
                 sleep(hour);
             }
         } catch (InterruptedException ex) {

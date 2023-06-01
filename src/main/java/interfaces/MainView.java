@@ -184,6 +184,7 @@ public class MainView extends javax.swing.JFrame {
         Copyright = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
 
         panelPantalla.setBackground(new java.awt.Color(255, 255, 255));
