@@ -15,6 +15,7 @@ public class MainView extends javax.swing.JFrame {
      */
     public MainView() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -46,6 +47,18 @@ public class MainView extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -108,39 +121,51 @@ public class MainView extends javax.swing.JFrame {
         panelTituloLamborghini = new javax.swing.JPanel();
         titulo6 = new javax.swing.JLabel();
         panelEmpleadosLamborghini = new javax.swing.JPanel();
-        titulo7 = new javax.swing.JLabel();
-        titulo8 = new javax.swing.JLabel();
-        titulo18 = new javax.swing.JLabel();
-        titulo19 = new javax.swing.JLabel();
-        titulo20 = new javax.swing.JLabel();
-        titulo21 = new javax.swing.JLabel();
-        titulo22 = new javax.swing.JLabel();
-        titulo23 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField24 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
-        titulo24 = new javax.swing.JLabel();
-        titulo25 = new javax.swing.JLabel();
-        jTextField33 = new javax.swing.JTextField();
-        jTextField34 = new javax.swing.JTextField();
-        jTextField35 = new javax.swing.JTextField();
-        titulo63 = new javax.swing.JLabel();
+        titulo9 = new javax.swing.JLabel();
+        titulo26 = new javax.swing.JLabel();
+        titulo41 = new javax.swing.JLabel();
+        titulo50 = new javax.swing.JLabel();
+        titulo69 = new javax.swing.JLabel();
+        titulo70 = new javax.swing.JLabel();
+        titulo71 = new javax.swing.JLabel();
+        titulo72 = new javax.swing.JLabel();
+        jTextField51 = new javax.swing.JTextField();
+        jTextField52 = new javax.swing.JTextField();
+        jTextField53 = new javax.swing.JTextField();
+        jTextField54 = new javax.swing.JTextField();
+        jTextField55 = new javax.swing.JTextField();
+        jTextField56 = new javax.swing.JTextField();
+        jTextField57 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jButton25 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
+        jButton27 = new javax.swing.JButton();
+        jButton28 = new javax.swing.JButton();
+        jButton29 = new javax.swing.JButton();
+        jButton30 = new javax.swing.JButton();
+        jButton31 = new javax.swing.JButton();
+        jButton32 = new javax.swing.JButton();
+        jButton33 = new javax.swing.JButton();
+        jButton34 = new javax.swing.JButton();
+        jButton35 = new javax.swing.JButton();
+        jButton36 = new javax.swing.JButton();
+        titulo73 = new javax.swing.JLabel();
+        titulo74 = new javax.swing.JLabel();
+        jTextField58 = new javax.swing.JTextField();
+        jTextField59 = new javax.swing.JTextField();
+        jTextField60 = new javax.swing.JTextField();
+        titulo75 = new javax.swing.JLabel();
         panelAlmacenLamborghini = new javax.swing.JPanel();
         titulo49 = new javax.swing.JLabel();
         titulo51 = new javax.swing.JLabel();
@@ -180,10 +205,13 @@ public class MainView extends javax.swing.JFrame {
         jTextField49 = new javax.swing.JTextField();
         jTextField50 = new javax.swing.JTextField();
         StartButton = new javax.swing.JButton();
+        StartButton2 = new javax.swing.JButton();
+        salir = new javax.swing.JButton();
         tituloPrincipal = new javax.swing.JLabel();
         Copyright = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
 
         panelPantalla.setBackground(new java.awt.Color(255, 255, 255));
@@ -339,137 +367,185 @@ public class MainView extends javax.swing.JFrame {
         jTextField7.setToolTipText("");
         panelEmpleadosBugatti.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 50, 20));
 
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("-");
+        panelEmpleadosBugatti.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 30, 20));
+
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("-");
+        panelEmpleadosBugatti.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 30, 20));
+
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("-");
+        panelEmpleadosBugatti.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 30, 20));
+
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("+");
+        panelEmpleadosBugatti.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 30, 20));
+
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("+");
+        panelEmpleadosBugatti.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 30, 20));
+
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("+");
+        panelEmpleadosBugatti.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 30, 20));
+
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("+");
+        panelEmpleadosBugatti.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 30, 20));
+
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("-");
+        panelEmpleadosBugatti.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 30, 20));
+
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("+");
+        panelEmpleadosBugatti.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 30, 20));
+
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("-");
+        panelEmpleadosBugatti.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 30, 20));
+
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("+");
+        panelEmpleadosBugatti.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 30, 20));
+
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("-");
+        panelEmpleadosBugatti.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 30, 20));
+
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("-");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        panelEmpleadosBugatti.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 30, -1));
+        panelEmpleadosBugatti.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 30, 20));
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("+");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        panelEmpleadosBugatti.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 30, -1));
+        panelEmpleadosBugatti.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 30, 20));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
         jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setText("+");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        panelEmpleadosBugatti.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 30, -1));
+        panelEmpleadosBugatti.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 30, 20));
 
         jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
         jButton5.setForeground(new java.awt.Color(0, 0, 0));
-        jButton5.setText("+");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        panelEmpleadosBugatti.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 30, -1));
+        panelEmpleadosBugatti.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 30, 20));
 
         jButton6.setBackground(new java.awt.Color(255, 255, 255));
-        jButton6.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
         jButton6.setForeground(new java.awt.Color(0, 0, 0));
-        jButton6.setText("+");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
-        panelEmpleadosBugatti.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 30, -1));
+        panelEmpleadosBugatti.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 30, 20));
 
         jButton7.setBackground(new java.awt.Color(255, 255, 255));
-        jButton7.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
         jButton7.setForeground(new java.awt.Color(0, 0, 0));
-        jButton7.setText("+");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
-        panelEmpleadosBugatti.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 30, -1));
+        panelEmpleadosBugatti.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 30, 20));
 
         jButton8.setBackground(new java.awt.Color(255, 255, 255));
-        jButton8.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jButton8.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
         jButton8.setForeground(new java.awt.Color(0, 0, 0));
-        jButton8.setText("+");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
             }
         });
-        panelEmpleadosBugatti.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 30, -1));
+        panelEmpleadosBugatti.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 30, 20));
 
         jButton11.setBackground(new java.awt.Color(255, 255, 255));
-        jButton11.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jButton11.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
         jButton11.setForeground(new java.awt.Color(0, 0, 0));
-        jButton11.setText("-");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
             }
         });
-        panelEmpleadosBugatti.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 30, -1));
+        panelEmpleadosBugatti.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 30, 20));
 
         jButton12.setBackground(new java.awt.Color(255, 255, 255));
-        jButton12.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jButton12.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
         jButton12.setForeground(new java.awt.Color(0, 0, 0));
-        jButton12.setText("-");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton12ActionPerformed(evt);
             }
         });
-        panelEmpleadosBugatti.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 30, -1));
+        panelEmpleadosBugatti.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 30, 20));
 
         jButton13.setBackground(new java.awt.Color(255, 255, 255));
-        jButton13.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jButton13.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
         jButton13.setForeground(new java.awt.Color(0, 0, 0));
-        jButton13.setText("-");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton13ActionPerformed(evt);
             }
         });
-        panelEmpleadosBugatti.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 30, -1));
+        panelEmpleadosBugatti.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 30, 20));
 
         jButton14.setBackground(new java.awt.Color(255, 255, 255));
-        jButton14.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jButton14.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
         jButton14.setForeground(new java.awt.Color(0, 0, 0));
-        jButton14.setText("-");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton14ActionPerformed(evt);
             }
         });
-        panelEmpleadosBugatti.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 30, -1));
+        panelEmpleadosBugatti.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 30, 20));
 
         jButton15.setBackground(new java.awt.Color(255, 255, 255));
-        jButton15.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jButton15.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
         jButton15.setForeground(new java.awt.Color(0, 0, 0));
-        jButton15.setText("-");
         jButton15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton15ActionPerformed(evt);
             }
         });
-        panelEmpleadosBugatti.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 30, -1));
+        panelEmpleadosBugatti.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 30, 20));
 
         titulo16.setBackground(new java.awt.Color(0, 0, 0));
         titulo16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -819,309 +895,357 @@ public class MainView extends javax.swing.JFrame {
         panelEmpleadosLamborghini.setForeground(new java.awt.Color(0, 0, 0));
         panelEmpleadosLamborghini.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        titulo7.setBackground(new java.awt.Color(0, 0, 0));
-        titulo7.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        titulo7.setForeground(new java.awt.Color(0, 0, 0));
-        titulo7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titulo7.setText("Empleados");
-        panelEmpleadosLamborghini.add(titulo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 340, 20));
+        titulo9.setBackground(new java.awt.Color(0, 0, 0));
+        titulo9.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        titulo9.setForeground(new java.awt.Color(0, 0, 0));
+        titulo9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo9.setText("Empleados");
+        panelEmpleadosLamborghini.add(titulo9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 340, 20));
 
-        titulo8.setBackground(new java.awt.Color(0, 0, 0));
-        titulo8.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        titulo8.setForeground(new java.awt.Color(0, 0, 0));
-        titulo8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo8.setText("Total de empleados:");
-        panelEmpleadosLamborghini.add(titulo8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 150, -1));
+        titulo26.setBackground(new java.awt.Color(0, 0, 0));
+        titulo26.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        titulo26.setForeground(new java.awt.Color(0, 0, 0));
+        titulo26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo26.setText("Total de empleados:");
+        panelEmpleadosLamborghini.add(titulo26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 150, -1));
 
-        titulo18.setBackground(new java.awt.Color(0, 0, 0));
-        titulo18.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        titulo18.setForeground(new java.awt.Color(0, 0, 0));
-        titulo18.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo18.setText("Creadores de Chasis:");
-        panelEmpleadosLamborghini.add(titulo18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 150, -1));
+        titulo41.setBackground(new java.awt.Color(0, 0, 0));
+        titulo41.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo41.setForeground(new java.awt.Color(0, 0, 0));
+        titulo41.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo41.setText("Creadores de Chasis:");
+        panelEmpleadosLamborghini.add(titulo41, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 150, -1));
 
-        titulo19.setBackground(new java.awt.Color(0, 0, 0));
-        titulo19.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        titulo19.setForeground(new java.awt.Color(0, 0, 0));
-        titulo19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo19.setText("Creadores de Carrocerías:");
-        panelEmpleadosLamborghini.add(titulo19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 170, -1));
+        titulo50.setBackground(new java.awt.Color(0, 0, 0));
+        titulo50.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo50.setForeground(new java.awt.Color(0, 0, 0));
+        titulo50.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo50.setText("Creadores de Carrocerías:");
+        panelEmpleadosLamborghini.add(titulo50, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 170, -1));
 
-        titulo20.setBackground(new java.awt.Color(0, 0, 0));
-        titulo20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        titulo20.setForeground(new java.awt.Color(0, 0, 0));
-        titulo20.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo20.setText("Creadores de Motores:");
-        panelEmpleadosLamborghini.add(titulo20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 150, -1));
+        titulo69.setBackground(new java.awt.Color(0, 0, 0));
+        titulo69.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo69.setForeground(new java.awt.Color(0, 0, 0));
+        titulo69.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo69.setText("Creadores de Motores:");
+        panelEmpleadosLamborghini.add(titulo69, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 150, -1));
 
-        titulo21.setBackground(new java.awt.Color(0, 0, 0));
-        titulo21.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        titulo21.setForeground(new java.awt.Color(0, 0, 0));
-        titulo21.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo21.setText("Creadores de Ruedas:");
-        panelEmpleadosLamborghini.add(titulo21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 150, -1));
+        titulo70.setBackground(new java.awt.Color(0, 0, 0));
+        titulo70.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo70.setForeground(new java.awt.Color(0, 0, 0));
+        titulo70.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo70.setText("Creadores de Ruedas:");
+        panelEmpleadosLamborghini.add(titulo70, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 150, -1));
 
-        titulo22.setBackground(new java.awt.Color(0, 0, 0));
-        titulo22.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        titulo22.setForeground(new java.awt.Color(0, 0, 0));
-        titulo22.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo22.setText("Creadores de Accesorios:");
-        panelEmpleadosLamborghini.add(titulo22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 160, -1));
+        titulo71.setBackground(new java.awt.Color(0, 0, 0));
+        titulo71.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo71.setForeground(new java.awt.Color(0, 0, 0));
+        titulo71.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo71.setText("Creadores de Accesorios:");
+        panelEmpleadosLamborghini.add(titulo71, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 160, -1));
 
-        titulo23.setBackground(new java.awt.Color(0, 0, 0));
-        titulo23.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        titulo23.setForeground(new java.awt.Color(0, 0, 0));
-        titulo23.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo23.setText("Director");
-        panelEmpleadosLamborghini.add(titulo23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 130, -1));
+        titulo72.setBackground(new java.awt.Color(0, 0, 0));
+        titulo72.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo72.setForeground(new java.awt.Color(0, 0, 0));
+        titulo72.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo72.setText("Director");
+        panelEmpleadosLamborghini.add(titulo72, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 130, -1));
 
-        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField8.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField8.setText("1");
-        jTextField8.setToolTipText("");
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        jTextField51.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField51.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jTextField51.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField51.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField51.setText("1");
+        jTextField51.setToolTipText("");
+        jTextField51.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                jTextField51ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 50, 20));
+        panelEmpleadosLamborghini.add(jTextField51, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 50, 20));
 
-        jTextField9.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField9.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField9.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField9.setToolTipText("");
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        jTextField52.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField52.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jTextField52.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField52.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField52.setToolTipText("");
+        jTextField52.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                jTextField52ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 50, 20));
+        panelEmpleadosLamborghini.add(jTextField52, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 50, 20));
 
-        jTextField11.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField11.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField11.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField11.setToolTipText("");
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+        jTextField53.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField53.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jTextField53.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField53.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField53.setToolTipText("");
+        jTextField53.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+                jTextField53ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 50, 20));
+        panelEmpleadosLamborghini.add(jTextField53, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 50, 20));
 
-        jTextField12.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField12.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField12.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField12.setToolTipText("");
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        jTextField54.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField54.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jTextField54.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField54.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField54.setToolTipText("");
+        jTextField54.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                jTextField54ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 50, 20));
+        panelEmpleadosLamborghini.add(jTextField54, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 50, 20));
 
-        jTextField13.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField13.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField13.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField13.setToolTipText("");
-        panelEmpleadosLamborghini.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 50, 20));
+        jTextField55.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField55.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jTextField55.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField55.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField55.setToolTipText("");
+        panelEmpleadosLamborghini.add(jTextField55, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 50, 20));
 
-        jTextField14.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField14.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField14.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField14.setToolTipText("");
-        panelEmpleadosLamborghini.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 50, 20));
+        jTextField56.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField56.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jTextField56.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField56.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField56.setToolTipText("");
+        panelEmpleadosLamborghini.add(jTextField56, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 50, 20));
 
-        jTextField24.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField24.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField24.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField24.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField24.setToolTipText("");
-        panelEmpleadosLamborghini.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 50, 20));
+        jTextField57.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField57.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jTextField57.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField57.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField57.setToolTipText("");
+        panelEmpleadosLamborghini.add(jTextField57, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 50, 20));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("-");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("-");
+        panelEmpleadosLamborghini.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 30, 20));
+
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("-");
+        panelEmpleadosLamborghini.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 30, 20));
+
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("-");
+        panelEmpleadosLamborghini.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 30, 20));
+
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("+");
+        panelEmpleadosLamborghini.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 30, 20));
+
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("+");
+        panelEmpleadosLamborghini.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 30, 20));
+
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setText("+");
+        panelEmpleadosLamborghini.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 30, 20));
+
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("+");
+        panelEmpleadosLamborghini.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 30, 20));
+
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("-");
+        panelEmpleadosLamborghini.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 30, 20));
+
+        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("+");
+        panelEmpleadosLamborghini.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 30, 20));
+
+        jLabel22.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("-");
+        panelEmpleadosLamborghini.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 30, 20));
+
+        jLabel23.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setText("+");
+        panelEmpleadosLamborghini.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 30, 20));
+
+        jLabel24.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("-");
+        panelEmpleadosLamborghini.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 30, 20));
+
+        jButton25.setBackground(new java.awt.Color(255, 255, 255));
+        jButton25.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
+        jButton25.setForeground(new java.awt.Color(0, 0, 0));
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton25ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 30, -1));
+        panelEmpleadosLamborghini.add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 30, 20));
 
-        jButton9.setBackground(new java.awt.Color(255, 255, 255));
-        jButton9.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(0, 0, 0));
-        jButton9.setText("+");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        jButton26.setBackground(new java.awt.Color(255, 255, 255));
+        jButton26.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
+        jButton26.setForeground(new java.awt.Color(0, 0, 0));
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                jButton26ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 30, -1));
+        panelEmpleadosLamborghini.add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 30, 20));
 
-        jButton10.setBackground(new java.awt.Color(255, 255, 255));
-        jButton10.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(0, 0, 0));
-        jButton10.setText("+");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        jButton27.setBackground(new java.awt.Color(255, 255, 255));
+        jButton27.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
+        jButton27.setForeground(new java.awt.Color(0, 0, 0));
+        jButton27.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                jButton27ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 30, -1));
+        panelEmpleadosLamborghini.add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 30, 20));
 
-        jButton16.setBackground(new java.awt.Color(255, 255, 255));
-        jButton16.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jButton16.setForeground(new java.awt.Color(0, 0, 0));
-        jButton16.setText("+");
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
+        jButton28.setBackground(new java.awt.Color(255, 255, 255));
+        jButton28.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
+        jButton28.setForeground(new java.awt.Color(0, 0, 0));
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
+                jButton28ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 30, -1));
+        panelEmpleadosLamborghini.add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 30, 20));
 
-        jButton17.setBackground(new java.awt.Color(255, 255, 255));
-        jButton17.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jButton17.setForeground(new java.awt.Color(0, 0, 0));
-        jButton17.setText("+");
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
+        jButton29.setBackground(new java.awt.Color(255, 255, 255));
+        jButton29.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
+        jButton29.setForeground(new java.awt.Color(0, 0, 0));
+        jButton29.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
+                jButton29ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 30, -1));
+        panelEmpleadosLamborghini.add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 30, 20));
 
-        jButton18.setBackground(new java.awt.Color(255, 255, 255));
-        jButton18.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jButton18.setForeground(new java.awt.Color(0, 0, 0));
-        jButton18.setText("+");
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
+        jButton30.setBackground(new java.awt.Color(255, 255, 255));
+        jButton30.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
+        jButton30.setForeground(new java.awt.Color(0, 0, 0));
+        jButton30.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
+                jButton30ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 30, -1));
+        panelEmpleadosLamborghini.add(jButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 30, 20));
 
-        jButton19.setBackground(new java.awt.Color(255, 255, 255));
-        jButton19.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jButton19.setForeground(new java.awt.Color(0, 0, 0));
-        jButton19.setText("+");
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        jButton31.setBackground(new java.awt.Color(255, 255, 255));
+        jButton31.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
+        jButton31.setForeground(new java.awt.Color(0, 0, 0));
+        jButton31.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
+                jButton31ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 30, -1));
+        panelEmpleadosLamborghini.add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 30, 20));
 
-        jButton20.setBackground(new java.awt.Color(255, 255, 255));
-        jButton20.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jButton20.setForeground(new java.awt.Color(0, 0, 0));
-        jButton20.setText("-");
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
+        jButton32.setBackground(new java.awt.Color(255, 255, 255));
+        jButton32.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
+        jButton32.setForeground(new java.awt.Color(0, 0, 0));
+        jButton32.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
+                jButton32ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 30, -1));
+        panelEmpleadosLamborghini.add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 30, 20));
 
-        jButton21.setBackground(new java.awt.Color(255, 255, 255));
-        jButton21.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jButton21.setForeground(new java.awt.Color(0, 0, 0));
-        jButton21.setText("-");
-        jButton21.addActionListener(new java.awt.event.ActionListener() {
+        jButton33.setBackground(new java.awt.Color(255, 255, 255));
+        jButton33.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
+        jButton33.setForeground(new java.awt.Color(0, 0, 0));
+        jButton33.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton21ActionPerformed(evt);
+                jButton33ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 30, -1));
+        panelEmpleadosLamborghini.add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 30, 20));
 
-        jButton22.setBackground(new java.awt.Color(255, 255, 255));
-        jButton22.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jButton22.setForeground(new java.awt.Color(0, 0, 0));
-        jButton22.setText("-");
-        jButton22.addActionListener(new java.awt.event.ActionListener() {
+        jButton34.setBackground(new java.awt.Color(255, 255, 255));
+        jButton34.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
+        jButton34.setForeground(new java.awt.Color(0, 0, 0));
+        jButton34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton22ActionPerformed(evt);
+                jButton34ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 30, -1));
+        panelEmpleadosLamborghini.add(jButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 30, 20));
 
-        jButton23.setBackground(new java.awt.Color(255, 255, 255));
-        jButton23.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jButton23.setForeground(new java.awt.Color(0, 0, 0));
-        jButton23.setText("-");
-        jButton23.addActionListener(new java.awt.event.ActionListener() {
+        jButton35.setBackground(new java.awt.Color(255, 255, 255));
+        jButton35.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
+        jButton35.setForeground(new java.awt.Color(0, 0, 0));
+        jButton35.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton23ActionPerformed(evt);
+                jButton35ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 30, -1));
+        panelEmpleadosLamborghini.add(jButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 30, 20));
 
-        jButton24.setBackground(new java.awt.Color(255, 255, 255));
-        jButton24.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jButton24.setForeground(new java.awt.Color(0, 0, 0));
-        jButton24.setText("-");
-        jButton24.addActionListener(new java.awt.event.ActionListener() {
+        jButton36.setBackground(new java.awt.Color(255, 255, 255));
+        jButton36.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
+        jButton36.setForeground(new java.awt.Color(0, 0, 0));
+        jButton36.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton24ActionPerformed(evt);
+                jButton36ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 30, -1));
+        panelEmpleadosLamborghini.add(jButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 30, 20));
 
-        titulo24.setBackground(new java.awt.Color(0, 0, 0));
-        titulo24.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        titulo24.setForeground(new java.awt.Color(0, 0, 0));
-        titulo24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo24.setText("Ensambladores:");
-        panelEmpleadosLamborghini.add(titulo24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 130, -1));
+        titulo73.setBackground(new java.awt.Color(0, 0, 0));
+        titulo73.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo73.setForeground(new java.awt.Color(0, 0, 0));
+        titulo73.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo73.setText("Ensambladores:");
+        panelEmpleadosLamborghini.add(titulo73, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 130, -1));
 
-        titulo25.setBackground(new java.awt.Color(0, 0, 0));
-        titulo25.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        titulo25.setForeground(new java.awt.Color(0, 0, 0));
-        titulo25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo25.setText("Gerente:");
-        panelEmpleadosLamborghini.add(titulo25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
+        titulo74.setBackground(new java.awt.Color(0, 0, 0));
+        titulo74.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        titulo74.setForeground(new java.awt.Color(0, 0, 0));
+        titulo74.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titulo74.setText("Gerente:");
+        panelEmpleadosLamborghini.add(titulo74, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
 
-        jTextField33.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField33.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField33.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField33.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField33.setText("1");
-        jTextField33.setToolTipText("");
-        panelEmpleadosLamborghini.add(jTextField33, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 50, 20));
+        jTextField58.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField58.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jTextField58.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField58.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField58.setText("1");
+        jTextField58.setToolTipText("");
+        panelEmpleadosLamborghini.add(jTextField58, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 50, 20));
 
-        jTextField34.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField34.setText("jTextField1");
-        panelEmpleadosLamborghini.add(jTextField34, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 50, 20));
+        jTextField59.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField59.setText("jTextField1");
+        panelEmpleadosLamborghini.add(jTextField59, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 50, 20));
 
-        jTextField35.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField35.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField35.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField35.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField35.setText("12");
-        jTextField35.setToolTipText("");
-        jTextField35.addActionListener(new java.awt.event.ActionListener() {
+        jTextField60.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField60.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jTextField60.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField60.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField60.setText("12");
+        jTextField60.setToolTipText("");
+        jTextField60.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField35ActionPerformed(evt);
+                jTextField60ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jTextField35, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 50, 20));
+        panelEmpleadosLamborghini.add(jTextField60, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 50, 20));
 
-        titulo63.setBackground(new java.awt.Color(0, 0, 0));
-        titulo63.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        titulo63.setForeground(new java.awt.Color(0, 0, 0));
-        titulo63.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titulo63.setText("Gestion de Trabajo");
-        panelEmpleadosLamborghini.add(titulo63, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 260, 20));
+        titulo75.setBackground(new java.awt.Color(0, 0, 0));
+        titulo75.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        titulo75.setForeground(new java.awt.Color(0, 0, 0));
+        titulo75.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo75.setText("Gestion de Trabajo");
+        panelEmpleadosLamborghini.add(titulo75, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 260, 20));
 
         panelLamborghini.add(panelEmpleadosLamborghini, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 340, 350));
 
@@ -1389,15 +1513,41 @@ public class MainView extends javax.swing.JFrame {
         StartButton.setBackground(new java.awt.Color(204, 204, 204));
         StartButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         StartButton.setForeground(new java.awt.Color(0, 0, 0));
-        StartButton.setText("Ver Grafica");
+        StartButton.setText("Cargar Valores Iniciales");
+        StartButton.setToolTipText("");
         StartButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 StartButtonActionPerformed(evt);
             }
         });
-        panelLamborghini.add(StartButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 340, 30));
+        panelLamborghini.add(StartButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 640, 340, 30));
+
+        StartButton2.setBackground(new java.awt.Color(204, 204, 204));
+        StartButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        StartButton2.setForeground(new java.awt.Color(0, 0, 0));
+        StartButton2.setText("Ver Grafica");
+        StartButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartButton2ActionPerformed(evt);
+            }
+        });
+        panelLamborghini.add(StartButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 340, 30));
 
         panelPantalla.add(panelLamborghini, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, 683, 690));
+
+        salir.setBackground(new java.awt.Color(255, 51, 51));
+        salir.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        salir.setForeground(new java.awt.Color(0, 0, 0));
+        salir.setText("x");
+        salir.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        salir.setBorderPainted(false);
+        salir.setFocusPainted(false);
+        salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirActionPerformed(evt);
+            }
+        });
+        panelPantalla.add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 0, 60, 40));
 
         tituloPrincipal.setBackground(new java.awt.Color(0, 0, 0));
         tituloPrincipal.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
@@ -1436,10 +1586,6 @@ public class MainView extends javax.swing.JFrame {
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -1497,74 +1643,6 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField17ActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
-
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
-
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
-
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
-
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton17ActionPerformed
-
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton18ActionPerformed
-
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton19ActionPerformed
-
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20ActionPerformed
-
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton21ActionPerformed
-
-    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton22ActionPerformed
-
-    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton23ActionPerformed
-
-    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton24ActionPerformed
-
-    private void jTextField35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField35ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField35ActionPerformed
-
     private void StopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_StopButtonActionPerformed
@@ -1572,6 +1650,86 @@ public class MainView extends javax.swing.JFrame {
     private void StartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_StartButtonActionPerformed
+
+    private void StartButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_StartButton2ActionPerformed
+
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_salirActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField51ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField51ActionPerformed
+
+    private void jTextField52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField52ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField52ActionPerformed
+
+    private void jTextField53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField53ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField53ActionPerformed
+
+    private void jTextField54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField54ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField54ActionPerformed
+
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton25ActionPerformed
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton26ActionPerformed
+
+    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton27ActionPerformed
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton28ActionPerformed
+
+    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton29ActionPerformed
+
+    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton30ActionPerformed
+
+    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton31ActionPerformed
+
+    private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton32ActionPerformed
+
+    private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton33ActionPerformed
+
+    private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton34ActionPerformed
+
+    private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton35ActionPerformed
+
+    private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton36ActionPerformed
+
+    private void jTextField60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField60ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField60ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1612,37 +1770,58 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel Copyright;
     private javax.swing.JButton StartButton;
     private javax.swing.JButton StartButton1;
+    private javax.swing.JButton StartButton2;
     private javax.swing.JButton StopButton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton30;
+    private javax.swing.JButton jButton31;
+    private javax.swing.JButton jButton32;
+    private javax.swing.JButton jButton33;
+    private javax.swing.JButton jButton34;
+    private javax.swing.JButton jButton35;
+    private javax.swing.JButton jButton36;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
@@ -1653,7 +1832,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
     private javax.swing.JTextField jTextField25;
     private javax.swing.JTextField jTextField26;
     private javax.swing.JTextField jTextField27;
@@ -1663,9 +1841,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField31;
     private javax.swing.JTextField jTextField32;
-    private javax.swing.JTextField jTextField33;
-    private javax.swing.JTextField jTextField34;
-    private javax.swing.JTextField jTextField35;
     private javax.swing.JTextField jTextField36;
     private javax.swing.JTextField jTextField37;
     private javax.swing.JTextField jTextField38;
@@ -1683,10 +1858,18 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField49;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField50;
+    private javax.swing.JTextField jTextField51;
+    private javax.swing.JTextField jTextField52;
+    private javax.swing.JTextField jTextField53;
+    private javax.swing.JTextField jTextField54;
+    private javax.swing.JTextField jTextField55;
+    private javax.swing.JTextField jTextField56;
+    private javax.swing.JTextField jTextField57;
+    private javax.swing.JTextField jTextField58;
+    private javax.swing.JTextField jTextField59;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField60;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JPanel panelAlmacenBugatti;
     private javax.swing.JPanel panelAlmacenLamborghini;
     private javax.swing.JPanel panelBugatti;
@@ -1702,6 +1885,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JPanel panelPantalla;
     private javax.swing.JPanel panelTituloBugatti;
     private javax.swing.JPanel panelTituloLamborghini;
+    private javax.swing.JButton salir;
     private javax.swing.JLabel titulo10;
     private javax.swing.JLabel titulo11;
     private javax.swing.JLabel titulo12;
@@ -1710,14 +1894,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel titulo15;
     private javax.swing.JLabel titulo16;
     private javax.swing.JLabel titulo17;
-    private javax.swing.JLabel titulo18;
-    private javax.swing.JLabel titulo19;
-    private javax.swing.JLabel titulo20;
-    private javax.swing.JLabel titulo21;
-    private javax.swing.JLabel titulo22;
-    private javax.swing.JLabel titulo23;
-    private javax.swing.JLabel titulo24;
-    private javax.swing.JLabel titulo25;
+    private javax.swing.JLabel titulo26;
     private javax.swing.JLabel titulo27;
     private javax.swing.JLabel titulo28;
     private javax.swing.JLabel titulo29;
@@ -1734,6 +1911,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel titulo39;
     private javax.swing.JLabel titulo4;
     private javax.swing.JLabel titulo40;
+    private javax.swing.JLabel titulo41;
     private javax.swing.JLabel titulo42;
     private javax.swing.JLabel titulo43;
     private javax.swing.JLabel titulo44;
@@ -1743,6 +1921,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel titulo48;
     private javax.swing.JLabel titulo49;
     private javax.swing.JLabel titulo5;
+    private javax.swing.JLabel titulo50;
     private javax.swing.JLabel titulo51;
     private javax.swing.JLabel titulo52;
     private javax.swing.JLabel titulo53;
@@ -1756,14 +1935,19 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel titulo60;
     private javax.swing.JLabel titulo61;
     private javax.swing.JLabel titulo62;
-    private javax.swing.JLabel titulo63;
     private javax.swing.JLabel titulo64;
     private javax.swing.JLabel titulo65;
     private javax.swing.JLabel titulo66;
     private javax.swing.JLabel titulo67;
     private javax.swing.JLabel titulo68;
-    private javax.swing.JLabel titulo7;
-    private javax.swing.JLabel titulo8;
+    private javax.swing.JLabel titulo69;
+    private javax.swing.JLabel titulo70;
+    private javax.swing.JLabel titulo71;
+    private javax.swing.JLabel titulo72;
+    private javax.swing.JLabel titulo73;
+    private javax.swing.JLabel titulo74;
+    private javax.swing.JLabel titulo75;
+    private javax.swing.JLabel titulo9;
     private javax.swing.JLabel tituloPrincipal;
     // End of variables declaration//GEN-END:variables
 }
