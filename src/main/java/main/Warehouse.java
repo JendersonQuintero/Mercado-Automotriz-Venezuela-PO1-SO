@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package main.vehiclePlantBu;
+package main;
 
 /**
  *
@@ -25,16 +25,40 @@ public class Warehouse {
     public int currentStorageVehicleStandard;
     private int counterVeStandard;
     public int currentStorageVehicleSpecial;
+    
+    private int standardVehiclesSave;
+    private int specialVehiclesSave;
 
-    private final int requireChasis = 1;
-    private final int requireCarroceria = 2;
-    private final int requireRueda = 1;
-    private final int requireMotor = 4;
-    private final int requireAccesorio = 2;
+    private int requireChasis;
+    private int requireCarroceria;
+    private int requireRueda;
+    private int requireMotor;
+    private int requireAccesorio;
+    
+    private int counterAcce;
 
     private boolean readyStartVeSpecial;
 
-    public Warehouse() {
+    public Warehouse(VehiclePlant vp) {
+        
+        switch (vp.name) {
+            case "BUGATTI" -> {
+                this.requireChasis = 1;
+                this.requireCarroceria = 2;
+                this.requireRueda = 4;
+                this.requireMotor = 4;
+                this.requireAccesorio = 2;
+                this.counterAcce = 5;
+            }
+            default -> {
+                this.requireChasis = 2;
+                this.requireCarroceria = 1;
+                this.requireRueda = 5;
+                this.requireMotor = 6;
+                this.requireAccesorio = 1;
+                this.counterAcce = 3;
+            }
+        }
 
         this.currentStorageChasis = 0;
         this.currentStorageCarroceria = 0;
@@ -137,10 +161,41 @@ public class Warehouse {
 
     private void monitorVeSpecial() {
         this.counterVeStandard++;
-        if (this.counterVeStandard >= 5) {
+        if (this.counterVeStandard >= this.counterAcce) {
             this.readyStartVeSpecial = true;
-            this.counterVeStandard -= 5;
+            this.counterVeStandard -= this.counterAcce;
         }
+    }
+    
+    public int getSpecialVehicles() {
+        return this.currentStorageVehicleSpecial;
+    }
+    
+    public int getStandardVehicles() {
+        return this.currentStorageVehicleStandard;
+    }
+    
+    public void sendVechicles() {
+        this.currentStorageVehicleStandard = 0;
+        this.currentStorageVehicleSpecial = 0;
+    }
+    
+    public int getStandardVehicleSaved(){
+        return this.standardVehiclesSave;
+    }
+    
+    public int getSpecialVehicleSaved(){
+        return this.specialVehiclesSave;
+    }
+    
+    public void setVehiclesSaved(int standardVehicles, int specialVehicles) {
+        this.standardVehiclesSave = standardVehicles;
+        this.specialVehiclesSave = specialVehicles;
+    }
+    
+    public void resetVehiclesSaved() {
+        this.standardVehiclesSave = 0;
+        this.specialVehiclesSave = 0;
     }
 
 }
