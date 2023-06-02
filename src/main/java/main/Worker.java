@@ -42,6 +42,7 @@ public class Worker extends Thread {
     public String statusGerente;
     public double counterHoursGerente;
     public int counterDaysGerente;
+    public int moneyDiscount;
 
     // Parameters director
     public double counterHoursDirector;
@@ -95,6 +96,7 @@ public class Worker extends Thread {
                 this.statusGerente = "";
                 this.counterHoursGerente = 0;
                 this.counterDaysGerente = 0;
+                this.moneyDiscount = 0;
             }
             case "DIRECTOR" -> {
                 this.salaryPerHour = this.salaryPerHourDirector;
@@ -290,6 +292,7 @@ public class Worker extends Thread {
     
     private void discountGerente(Worker w, int mount) {
         w.currentGain -= mount;
+        this.moneyDiscount += mount;
     }
 
 }

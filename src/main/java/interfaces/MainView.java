@@ -40,9 +40,30 @@ public class MainView extends javax.swing.JFrame {
         this.textAAccesorioBu.setText(Integer.toString(this.vpBu.warehouse.currentStorageAccesorio));
         this.textAVeStandardBu.setText(Integer.toString(this.vpBu.warehouse.getStandardVehicles()));
         this.textAVeSpecialBu.setText(Integer.toString(this.vpBu.warehouse.getSpecialVehicles()));
-        this.updateWorkersBu();
+        this.textEEarningsBu.setText(Double.toString(this.vpBu.earnings));
+        this.textECostBu.setText(Double.toString(this.vpBu.operCost));
+        this.textEUtilityBu.setText(Double.toString(this.vpBu.plantUtility));
+        this.textStatusGerenteBu.setText(this.vpBu.checkWorker("GERENTE").statusGerente);
+        this.textStatusDirectorBu.setText(this.vpBu.checkWorker("DIRECTOR").statusDirector);
+        this.textDiscountGerenteBu.setText(Integer.toString(this.vpBu.checkWorker("GERENTE").foulGerente));
+        this.textFoulGerenteBu.setText(Integer.toString(this.vpBu.checkWorker("GERENTE").moneyDiscount));
         
         // ACTUALIZACIÓN DE DATOS PARA LAMBORGHINI
+        this.textDaysRemainingLam.setText(Integer.toString(this.vpLa.deliveryDay));
+        this.textAChasisLam.setText(Integer.toString(this.vpLa.warehouse.currentStorageChasis));
+        this.textACarroceriaLam.setText(Integer.toString(this.vpLa.warehouse.currentStorageCarroceria));
+        this.textAMotorLam.setText(Integer.toString(this.vpLa.warehouse.currentStorageMotor));
+        this.textARuedaLam.setText(Integer.toString(this.vpLa.warehouse.currentStorageRueda));
+        this.textAAccesorioLam.setText(Integer.toString(this.vpLa.warehouse.currentStorageAccesorio));
+        this.textAVeStandardLam.setText(Integer.toString(this.vpLa.warehouse.getStandardVehicles()));
+        this.textAVeSpecialLam.setText(Integer.toString(this.vpLa.warehouse.getSpecialVehicles()));
+        this.textEEarningsLam.setText(Double.toString(this.vpLa.earnings));
+        this.textECostLam.setText(Double.toString(this.vpLa.operCost));
+        this.textEUtilityLam.setText(Double.toString(this.vpLa.plantUtility));
+        this.textStatusGerenteLam.setText(this.vpLa.checkWorker("GERENTE").statusGerente);
+        this.textStatusDirectorLam.setText(this.vpLa.checkWorker("DIRECTOR").statusDirector);
+        this.textDiscountGerenteLam.setText(Integer.toString(this.vpLa.checkWorker("GERENTE").foulGerente));
+        this.textFoulGerenteLam.setText(Integer.toString(this.vpLa.checkWorker("GERENTE").moneyDiscount));
         
     }
     
