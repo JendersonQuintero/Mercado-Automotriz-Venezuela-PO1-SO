@@ -17,6 +17,8 @@ public class MainView extends javax.swing.JFrame {
     public VehiclePlant vpLa;
     public InitData dataInit;
     public ReadTxt txt;
+    public InitParameters iParam;
+    public boolean startInitParameters;
     
     /**
      * Creates new form MainView
@@ -26,8 +28,7 @@ public class MainView extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         
         this.txt = new ReadTxt();
-        
-        this.dataInit = txt.getParametersInit();
+        this.startInitParameters = true;
     }
 
     public void updateDataView() {
@@ -65,8 +66,11 @@ public class MainView extends javax.swing.JFrame {
         this.textDiscountGerenteLam.setText(Integer.toString(this.vpLa.checkWorker("GERENTE").foulGerente));
         this.textFoulGerenteLam.setText(Integer.toString(this.vpLa.checkWorker("GERENTE").moneyDiscount));
         
-        
-        
+        if (this.startInitParameters) {
+            this.updateWorkersBu();
+            this.updateWorkersLam();
+            this.startInitParameters = false;
+        }
     }
     
     public void updateWorkersBu() {
@@ -91,10 +95,6 @@ public class MainView extends javax.swing.JFrame {
         this.textGerenteLam.setText(Integer.toString(this.vpLa.countWorkerGerente));
         this.textDirectorLam.setText(Integer.toString(this.vpLa.countWorkerDirector));
         this.textTotalWorkersLam.setText(Integer.toString(this.vpLa.workers.size()));
-    }
-    
-    private void loadInitParameters() {
-        
     }
     
     /**
@@ -225,18 +225,18 @@ public class MainView extends javax.swing.JFrame {
         btnMinusEnsambladorLam = new javax.swing.JLabel();
         btnMoreEnsambladorLam = new javax.swing.JLabel();
         btnMinusRuedaLam = new javax.swing.JLabel();
-        jButton25 = new javax.swing.JButton();
         jButton26 = new javax.swing.JButton();
         jButton27 = new javax.swing.JButton();
         jButton28 = new javax.swing.JButton();
         jButton29 = new javax.swing.JButton();
         jButton30 = new javax.swing.JButton();
         jButton31 = new javax.swing.JButton();
-        jButton32 = new javax.swing.JButton();
-        jButton33 = new javax.swing.JButton();
-        jButton34 = new javax.swing.JButton();
-        jButton35 = new javax.swing.JButton();
+        jButton25 = new javax.swing.JButton();
         jButton36 = new javax.swing.JButton();
+        jButton35 = new javax.swing.JButton();
+        jButton34 = new javax.swing.JButton();
+        jButton33 = new javax.swing.JButton();
+        jButton32 = new javax.swing.JButton();
         titulo73 = new javax.swing.JLabel();
         titulo74 = new javax.swing.JLabel();
         textGerenteLam = new javax.swing.JTextField();
@@ -491,7 +491,7 @@ public class MainView extends javax.swing.JFrame {
         panelEmpleadosBugatti.add(btnMinusChasisBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 30, 20));
 
         btnMoreChasisBu.setBackground(new java.awt.Color(255, 255, 255));
-        btnMoreChasisBu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnMoreChasisBu.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
         btnMoreChasisBu.setForeground(new java.awt.Color(0, 0, 0));
         btnMoreChasisBu.setText("+");
         btnMoreChasisBu.addActionListener(new java.awt.event.ActionListener() {
@@ -1155,16 +1155,6 @@ public class MainView extends javax.swing.JFrame {
         btnMinusRuedaLam.setText("-");
         panelEmpleadosLamborghini.add(btnMinusRuedaLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 30, 20));
 
-        jButton25.setBackground(new java.awt.Color(255, 255, 255));
-        jButton25.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
-        jButton25.setForeground(new java.awt.Color(0, 0, 0));
-        jButton25.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton25ActionPerformed(evt);
-            }
-        });
-        panelEmpleadosLamborghini.add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 30, 20));
-
         jButton26.setBackground(new java.awt.Color(255, 255, 255));
         jButton26.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
         jButton26.setForeground(new java.awt.Color(0, 0, 0));
@@ -1225,35 +1215,25 @@ public class MainView extends javax.swing.JFrame {
         });
         panelEmpleadosLamborghini.add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 30, 20));
 
-        jButton32.setBackground(new java.awt.Color(255, 255, 255));
-        jButton32.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
-        jButton32.setForeground(new java.awt.Color(0, 0, 0));
-        jButton32.addActionListener(new java.awt.event.ActionListener() {
+        jButton25.setBackground(new java.awt.Color(255, 255, 255));
+        jButton25.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
+        jButton25.setForeground(new java.awt.Color(0, 0, 0));
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton32ActionPerformed(evt);
+                jButton25ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 30, 20));
+        panelEmpleadosLamborghini.add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 30, 20));
 
-        jButton33.setBackground(new java.awt.Color(255, 255, 255));
-        jButton33.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
-        jButton33.setForeground(new java.awt.Color(0, 0, 0));
-        jButton33.addActionListener(new java.awt.event.ActionListener() {
+        jButton36.setBackground(new java.awt.Color(255, 255, 255));
+        jButton36.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
+        jButton36.setForeground(new java.awt.Color(0, 0, 0));
+        jButton36.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton33ActionPerformed(evt);
+                jButton36ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 30, 20));
-
-        jButton34.setBackground(new java.awt.Color(255, 255, 255));
-        jButton34.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
-        jButton34.setForeground(new java.awt.Color(0, 0, 0));
-        jButton34.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton34ActionPerformed(evt);
-            }
-        });
-        panelEmpleadosLamborghini.add(jButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 30, 20));
+        panelEmpleadosLamborghini.add(jButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 30, 20));
 
         jButton35.setBackground(new java.awt.Color(255, 255, 255));
         jButton35.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
@@ -1265,15 +1245,35 @@ public class MainView extends javax.swing.JFrame {
         });
         panelEmpleadosLamborghini.add(jButton35, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 30, 20));
 
-        jButton36.setBackground(new java.awt.Color(255, 255, 255));
-        jButton36.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
-        jButton36.setForeground(new java.awt.Color(0, 0, 0));
-        jButton36.addActionListener(new java.awt.event.ActionListener() {
+        jButton34.setBackground(new java.awt.Color(255, 255, 255));
+        jButton34.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
+        jButton34.setForeground(new java.awt.Color(0, 0, 0));
+        jButton34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton36ActionPerformed(evt);
+                jButton34ActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 30, 20));
+        panelEmpleadosLamborghini.add(jButton34, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 30, 20));
+
+        jButton33.setBackground(new java.awt.Color(255, 255, 255));
+        jButton33.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
+        jButton33.setForeground(new java.awt.Color(0, 0, 0));
+        jButton33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton33ActionPerformed(evt);
+            }
+        });
+        panelEmpleadosLamborghini.add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 30, 20));
+
+        jButton32.setBackground(new java.awt.Color(255, 255, 255));
+        jButton32.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
+        jButton32.setForeground(new java.awt.Color(0, 0, 0));
+        jButton32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton32ActionPerformed(evt);
+            }
+        });
+        panelEmpleadosLamborghini.add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 30, 20));
 
         titulo73.setBackground(new java.awt.Color(0, 0, 0));
         titulo73.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1668,47 +1668,69 @@ public class MainView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMoreChasisBuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoreChasisBuActionPerformed
-        this.vpBu.addNewWorker("CHASIS");
+        if (this.vpBu.addNewWorker("CHASIS")) {
+            this.updateWorkersBu();
+        }
     }//GEN-LAST:event_btnMoreChasisBuActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        this.vpBu.addNewWorker("CARROCERIA");
+        if (this.vpBu.addNewWorker("CARROCERIA")) {
+            this.updateWorkersBu();
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        this.vpBu.addNewWorker("MOTOR");
+        if (this.vpBu.addNewWorker("MOTOR")) {
+            this.updateWorkersBu();
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        this.vpBu.addNewWorker("RUEDA");
+        if (this.vpBu.addNewWorker("RUEDA")) {
+            this.updateWorkersBu();
+        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        this.vpBu.addNewWorker("ACCESORIO");
+        if (this.vpBu.addNewWorker("ACCESORIO")) {
+            this.updateWorkersBu();
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        this.vpBu.addNewWorker("ENSAMBLADOR");
+        if (this.vpBu.addNewWorker("ENSAMBLADOR")) {
+            this.updateWorkersBu();
+        }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        this.vpBu.deleteWorker("ENSAMBLADOR");
+        if (this.vpBu.deleteWorker("ENSAMBLADOR")) {
+            this.updateWorkersBu();
+        }
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        this.vpBu.deleteWorker("ACCESORIO");
+        if (this.vpBu.deleteWorker("ACCESORIO")) {
+            this.updateWorkersBu();
+        }
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        this.vpBu.deleteWorker("RUEDA");
+        if (this.vpBu.deleteWorker("RUEDA")) {
+            this.updateWorkersBu();
+        }
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        this.vpBu.deleteWorker("MOTOR");
+        if (this.vpBu.deleteWorker("MOTOR")) {
+            this.updateWorkersBu();
+        }
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        this.vpBu.deleteWorker("CARROCERIA");
+        if (this.vpBu.deleteWorker("CARROCERIA")) {
+            this.updateWorkersBu();
+        }
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void btnStopSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStopSimulationActionPerformed
@@ -1717,7 +1739,8 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnStopSimulationActionPerformed
 
     private void btnLoadInitParametersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadInitParametersActionPerformed
-        // TODO add your handling code here:
+        this.iParam = new InitParameters();
+        this.iParam.setVisible(true);
     }//GEN-LAST:event_btnLoadInitParametersActionPerformed
 
     private void btnWatchGraphicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWatchGraphicActionPerformed
@@ -1729,7 +1752,9 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_salirActionPerformed
 
     private void btnMinusChasisBuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinusChasisBuActionPerformed
-        this.vpBu.deleteWorker("CHASIS");
+        if (this.vpBu.deleteWorker("CHASIS")) {
+            this.updateWorkersBu();
+        }
     }//GEN-LAST:event_btnMinusChasisBuActionPerformed
 
     private void textDirectorLamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textDirectorLamActionPerformed
@@ -1749,51 +1774,75 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_textCMotorLamActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
-        // TODO add your handling code here:
+        if (this.vpLa.deleteWorker("CHASIS")) {
+            this.updateWorkersLam();
+        }
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
-        // TODO add your handling code here:
+        if (this.vpLa.addNewWorker("CHASIS")) {
+            this.updateWorkersLam();
+        }
     }//GEN-LAST:event_jButton26ActionPerformed
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
-        // TODO add your handling code here:
+        if (this.vpLa.addNewWorker("CARROCERIA")) {
+            this.updateWorkersLam();
+        }
     }//GEN-LAST:event_jButton27ActionPerformed
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
-        // TODO add your handling code here:
+        if (this.vpLa.addNewWorker("MOTOR")) {
+            this.updateWorkersLam();
+        }
     }//GEN-LAST:event_jButton28ActionPerformed
 
     private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
-        // TODO add your handling code here:
+        if (this.vpLa.addNewWorker("RUEDA")) {
+            this.updateWorkersLam();
+        }
     }//GEN-LAST:event_jButton29ActionPerformed
 
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
-        // TODO add your handling code here:
+        if (this.vpLa.addNewWorker("ACCESORIO")) {
+            this.updateWorkersLam();
+        }
     }//GEN-LAST:event_jButton30ActionPerformed
 
     private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
-        // TODO add your handling code here:
+        if (this.vpLa.addNewWorker("ENSAMBLADOR")) {
+            this.updateWorkersLam();
+        }
     }//GEN-LAST:event_jButton31ActionPerformed
 
     private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
-        // TODO add your handling code here:
+        if (this.vpLa.deleteWorker("ENSAMBLADOR")) {
+            this.updateWorkersLam();
+        }
     }//GEN-LAST:event_jButton32ActionPerformed
 
     private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
-        // TODO add your handling code here:
+        if (this.vpLa.deleteWorker("ACCESORIO")) {
+            this.updateWorkersLam();
+        }
     }//GEN-LAST:event_jButton33ActionPerformed
 
     private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
-        // TODO add your handling code here:
+        if (this.vpLa.deleteWorker("RUEDA")) {
+            this.updateWorkersLam();
+        }
     }//GEN-LAST:event_jButton34ActionPerformed
 
     private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
-        // TODO add your handling code here:
+        if (this.vpLa.deleteWorker("MOTOR")) {
+            this.updateWorkersLam();
+        }
     }//GEN-LAST:event_jButton35ActionPerformed
 
     private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
-        // TODO add your handling code here:
+        if (this.vpLa.deleteWorker("CARROCERIA")) {
+            this.updateWorkersLam();
+        }
     }//GEN-LAST:event_jButton36ActionPerformed
 
     private void textTotalWorkersLamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textTotalWorkersLamActionPerformed
@@ -1801,6 +1850,8 @@ public class MainView extends javax.swing.JFrame {
     }//GEN-LAST:event_textTotalWorkersLamActionPerformed
 
     private void btnStartSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartSimulationActionPerformed
+        this.dataInit = txt.getParametersInit();
+        
         vpBu = new VehiclePlant("BUGATTI",
                 this.dataInit.getDurationInS(), 
                 this.dataInit.getDeadline(),

@@ -4,6 +4,8 @@
  */
 package interfaces;
 
+import java.awt.HeadlessException;
+import javax.swing.JOptionPane;
 import main.InitData;
 import main.ReadTxt;
 
@@ -15,6 +17,7 @@ public class InitParameters extends javax.swing.JFrame {
 
     public ReadTxt txt;
     public InitData dataInit;
+
     /**
      * Creates new form InitParameters
      */
@@ -22,10 +25,22 @@ public class InitParameters extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.txt = new ReadTxt();
-        
+
         this.dataInit = txt.getParametersInit();
+        this.setValuesInit();
     }
-    
+
+    private void setValuesInit() {
+        this.textDurationInS.setText(Integer.toString(this.dataInit.getDurationInS()));
+        this.textDeadline.setText(Integer.toString(this.dataInit.getDeadline()));
+        this.textCChasis.setText(Integer.toString(this.dataInit.getMountChasisInit()));
+        this.textCCarroceria.setText(Integer.toString(this.dataInit.getMountCarroceriaInit()));
+        this.textCRueda.setText(Integer.toString(this.dataInit.getMountRuedaInit()));
+        this.textCMotor.setText(Integer.toString(this.dataInit.getMountMotorInit()));
+        this.textCAccesorio.setText(Integer.toString(this.dataInit.getMountAccesorioInit()));
+        this.textEnsamblador.setText(Integer.toString(this.dataInit.getMountEnsambladorInit()));
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -79,6 +94,11 @@ public class InitParameters extends javax.swing.JFrame {
         jPanel1.add(textCAccesorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 160, 30));
 
         btnSaveData.setText("Guardar");
+        btnSaveData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveDataActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnSaveData, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, 110, 30));
 
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -142,43 +162,78 @@ public class InitParameters extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
-        System.exit(0);
+        this.setVisible(false);
     }//GEN-LAST:event_salirActionPerformed
+
+    private void btnSaveDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveDataActionPerformed
+
+        try {
+            int sumWorkers = (Integer.parseInt(this.textCChasis.getText())
+                    +Integer.parseInt(this.textCCarroceria.getText())
+                    +Integer.parseInt(this.textCRueda.getText())
+                    +Integer.parseInt(this.textCMotor.getText())
+                    +Integer.parseInt(this.textCAccesorio.getText())
+                    +Integer.parseInt(this.textEnsamblador.getText()));
+        
+            if (sumWorkers > 10) {
+                JOptionPane.showMessageDialog(null, "Excede el máximo de trabajadores", "Empleados a tope",0);
+            } else {
+                InitData newParameters = new InitData();
+                newParameters.setDurationInS(Integer.parseInt(this.textDurationInS.getText()));
+                newParameters.setDeadline(Integer.parseInt(this.textDeadline.getText()));
+                newParameters.setMountChasisInit(Integer.parseInt(this.textCChasis.getText()));
+                newParameters.setMountCarroceriaInit(Integer.parseInt(this.textCCarroceria.getText()));
+                newParameters.setMountRuedaInit(Integer.parseInt(this.textCRueda.getText()));
+                newParameters.setMountMotorInit(Integer.parseInt(this.textCMotor.getText()));
+                newParameters.setMountAccesorioInit(Integer.parseInt(this.textCAccesorio.getText()));
+                newParameters.setMountEnsambladorInit(Integer.parseInt(this.textEnsamblador.getText()));
+                
+                this.txt.updateParameters(newParameters);
+                JOptionPane.showMessageDialog(null, "Actualización exitosa", "Parametros actualizados",1);
+                this.setVisible(false);
+            }
+            
+        } catch (HeadlessException | NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "El valor ingresado no es numerico", "Error tipo de dato",0);
+        }
+
+
+    }//GEN-LAST:event_btnSaveDataActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InitParameters.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InitParameters.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InitParameters.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InitParameters.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new InitParameters().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(InitParameters.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(InitParameters.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(InitParameters.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(InitParameters.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new InitParameters().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSaveData;

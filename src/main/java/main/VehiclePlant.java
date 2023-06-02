@@ -122,7 +122,7 @@ public class VehiclePlant extends Thread {
         }
     }
 
-    public void addNewWorker(String type) {
+    public boolean addNewWorker(String type) {
         if (this.workers.size() < this.maxWorkers) {
             switch (type) {
                 case "CHASIS" ->
@@ -139,13 +139,14 @@ public class VehiclePlant extends Thread {
                     this.countWorkerEnsamblador++;
             }
             this.updateWorkersNow = true;
+            return true;
         } else {
-            System.out.println("Capacidad maxima de trabajadores en la planta");
             JOptionPane.showMessageDialog(null, "Capacidad maxima de trabajadores en la planta", "Empleados a tope",0);
+            return false;
         }
     }
 
-    public void deleteWorker(String type) {
+    public boolean deleteWorker(String type) {
         long mount = this.workers.stream().filter(w -> w.getType().equals(type)).count();
         if (mount > 1) {
             switch (type) {
@@ -163,9 +164,10 @@ public class VehiclePlant extends Thread {
                     this.countWorkerEnsamblador--;
             }
             this.updateWorkersNow = true;
+            return true;
         } else {
-            System.out.println("Debe existir al menos un trabajador en la linea");
             JOptionPane.showMessageDialog(null, "Debe existir al menos un trabajador en la linea", "Cero empleados",0);
+            return false;
         }
     }
 

@@ -43,11 +43,14 @@ public class ReadTxt {
     /**
      * Escribe los datos ingresados por el usuario en el txt.
      *
-     * @param dato
+     * @param data
      */
-    public void escribirTxt(String dato) {
+    public void updateParameters(InitData data) {
         try (BufferedWriter escribe = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(txt, true)))) {
-            escribe.write(dato);
+            String newData = "DURACION:"+data.getDurationInS()+"/\n" + "DEADLINE:" + data.getDeadline()+"/\n" + "TCHASIS:" + data.getMountChasisInit()+"/\n" + "TCARROCERIA:" + data.getMountCarroceriaInit()+"/\n" + "TRUEDA:" + data.getMountRuedaInit()+"/\n" + "TMOTOR:"+data.getMountMotorInit()+"/\n" + "TACCESORIO:"+data.getMountAccesorioInit()+"/\n" + "TENSAMBLADOR:"+data.getMountEnsambladorInit()+"/\n";
+            PrintWriter p = new PrintWriter(txt);
+            p.print(newData);
+            escribe.write(newData);
             escribe.close();
         } catch (IOException e) {
         }
