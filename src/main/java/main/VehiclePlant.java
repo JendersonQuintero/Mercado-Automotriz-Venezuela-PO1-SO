@@ -4,6 +4,7 @@
  */
 package main;
 
+import interfaces.MainView;
 import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
 
@@ -11,7 +12,7 @@ import java.util.concurrent.Semaphore;
  *
  * @author JendersonQ
  */
-public class VehiclePlant {
+public class VehiclePlant extends Thread {
 
     public String name;
     public ArrayList<Worker> workers;
@@ -40,20 +41,23 @@ public class VehiclePlant {
     public boolean updateWorkersNow;
 
     // Control de trabajadores
-    private int countWorkerChasis;
-    private int countWorkerCarroceria;
-    private int countWorkerMotor;
-    private int countWorkerRueda;
-    private int countWorkerAccesorio;
-    private int countWorkerEnsamblador;
-    private final int countWorkerDirector = 1;
-    private final int countWorkerGerente = 1;
+    public int countWorkerChasis;
+    public int countWorkerCarroceria;
+    public int countWorkerMotor;
+    public int countWorkerRueda;
+    public int countWorkerAccesorio;
+    public int countWorkerEnsamblador;
+    public final int countWorkerDirector = 1;
+    public final int countWorkerGerente = 1;
+    
+    public MainView mV;
 
-    private final String[] typeWorkers = {"DIRECTOR", "GERENTE", "CHASIS", "CARROCERIA", "MOTOR", "RUEDA", "ACCESORIO", "ENSAMBLADOR"};
+    private final String[] typeWorkers = {"GERENTE", "DIRECTOR", "CHASIS", "CARROCERIA", "MOTOR", "RUEDA", "ACCESORIO", "ENSAMBLADOR"};
 
-    public VehiclePlant(String plant, long durationInS, int deadline, int iChasis, int iCarroceria, int iMotor, int iRueda, int iAccesorio, int iEnsamblador) {
+    public VehiclePlant(String plant, long durationInS, int deadline, int iChasis, int iCarroceria, int iMotor, int iRueda, int iAccesorio, int iEnsamblador, MainView mV) {
         
         this.name = plant;
+        this.mV = mV;
         
         switch (plant) {
             case "BUGATTI" -> {
@@ -89,24 +93,22 @@ public class VehiclePlant {
         this.plantUtility = 0;
         this.daysPassed = 0;
         this.hourPassed = 0;
-
-        this.startPlant();
     }
 
+    @Override
     @SuppressWarnings("SleepWhileInLoop")
-    private void startPlant() {
-
+    public void run() {
         while (this.continuePlant()) {
-
             for (int hour = 0; hour < this.dayDurationInMs; hour += (this.dayDurationInMs / 24)) {
                 try {
                     this.hourPassed = hour;
-
+                    this.mV.updateDataView();
+                    
                     if (this.updateWorkersNow) {
                         this.updateWorkers();
                     }
-
-                    Thread.sleep((this.dayDurationInMs / 24)); // Factor de tiempo agregado por procesos internos
+                    
+                    Thread.sleep((this.dayDurationInMs / 24));
                 } catch (InterruptedException e) {
                     System.out.println(e);
                 }
@@ -240,8 +242,8 @@ public class VehiclePlant {
     
     public Worker checkWorker(String type) {
         return switch (type) {
-            case "GERENTE" -> this.workers.get(1);
-            default -> this.workers.get(0);
+            case "GERENTE" -> this.workers.get(0);
+            default -> this.workers.get(1);
         };
     }
 

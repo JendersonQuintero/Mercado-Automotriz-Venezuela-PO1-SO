@@ -22,28 +22,19 @@ import javax.swing.JOptionPane;
  */
 public class ReadTxt {
 
-    private final String dirTxtBu = "parametros\\pInitBu.txt";
-    private final String dirTxtLam = "parametros\\pInitLam.txt";
-    private final File txtBu = new File(dirTxtBu);
-    private final File txtLam = new File(dirTxtLam);
-    public InitData saveDataBu;
-    public InitData saveDataLam;
+    private final String dirTxt = "parametros\\pInit.txt";
+    private final File txt = new File(dirTxt);
+    public InitData saveData;
 
     /**
      * Constructor del txt
      */
     public ReadTxt() {
-        this.saveDataBu = new InitData();
-        this.saveDataLam = new InitData();
+        this.saveData = new InitData();
         try {
-            if (txtBu.exists()) {
+            if (txt.exists()) {
             } else {
-                txtBu.createNewFile();
-            }
-            
-            if (txtLam.exists()) {
-            } else {
-                txtLam.createNewFile();
+                txt.createNewFile();
             }
         } catch (IOException e) {
         }
@@ -55,7 +46,7 @@ public class ReadTxt {
      * @param dato
      */
     public void escribirTxt(String dato) {
-        try (BufferedWriter escribe = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(txtBu, true)))) {
+        try (BufferedWriter escribe = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(txt, true)))) {
             escribe.write(dato);
             escribe.close();
         } catch (IOException e) {
@@ -67,9 +58,9 @@ public class ReadTxt {
      *
      * @return String
      */
-    public InitData getParametersInitBu() {
+    public InitData getParametersInit() {
         try {
-            BufferedReader bF = new BufferedReader(new FileReader(dirTxtBu));
+            BufferedReader bF = new BufferedReader(new FileReader(dirTxt));
             String temp = "";
             String bfRead;
             while ((bfRead = bF.readLine()) != null) {
@@ -81,51 +72,21 @@ public class ReadTxt {
                 
                 for (int i = 0; i < pParameter.length; i++) {
                     switch (pParameter[0]) {
-                        case "DURACION" -> this.saveDataBu.setDurationInS(Integer.parseInt(pParameter[1]));
-                        case "DEADLINE" -> this.saveDataBu.setDeadline(Integer.parseInt(pParameter[1]));
-                        case "TCHASIS" -> this.saveDataBu.setMountChasisInit(Integer.parseInt(pParameter[1]));
-                        case "TCARROCERIA" -> this.saveDataBu.setMountCarroceriaInit(Integer.parseInt(pParameter[1]));
-                        case "TRUEDA" -> this.saveDataBu.setMountRuedaInit(Integer.parseInt(pParameter[1]));
-                        case "TMOTOR" -> this.saveDataBu.setMountMotorInit(Integer.parseInt(pParameter[1]));
-                        case "TACCESORIO" -> this.saveDataBu.setMountAccesorioInit(Integer.parseInt(pParameter[1]));
-                        case "TENSAMBLADOR" -> this.saveDataBu.setMountEnsambladorInit(Integer.parseInt(pParameter[1]));
+                        case "DURACION" -> this.saveData.setDurationInS(Integer.parseInt(pParameter[1]));
+                        case "DEADLINE" -> this.saveData.setDeadline(Integer.parseInt(pParameter[1]));
+                        case "TCHASIS" -> this.saveData.setMountChasisInit(Integer.parseInt(pParameter[1]));
+                        case "TCARROCERIA" -> this.saveData.setMountCarroceriaInit(Integer.parseInt(pParameter[1]));
+                        case "TRUEDA" -> this.saveData.setMountRuedaInit(Integer.parseInt(pParameter[1]));
+                        case "TMOTOR" -> this.saveData.setMountMotorInit(Integer.parseInt(pParameter[1]));
+                        case "TACCESORIO" -> this.saveData.setMountAccesorioInit(Integer.parseInt(pParameter[1]));
+                        case "TENSAMBLADOR" -> this.saveData.setMountEnsambladorInit(Integer.parseInt(pParameter[1]));
                         default -> {}
                     }
                 }
             }
         } catch (IOException e) {
         }
-        return this.saveDataBu;
+        return this.saveData;
     }
     
-    public InitData getParametersInitLam() {
-        try {
-            BufferedReader bF = new BufferedReader(new FileReader(dirTxtLam));
-            String temp = "";
-            String bfRead;
-            while ((bfRead = bF.readLine()) != null) {
-                temp += bfRead;
-            }
-            String[] partes = temp.split("/");
-            for (String parameter : partes) {
-                String[] pParameter = parameter.split(":");
-                
-                for (int i = 0; i < pParameter.length; i++) {
-                    switch (pParameter[0]) {
-                        case "DURACION" -> this.saveDataLam.setDurationInS(Integer.parseInt(pParameter[1]));
-                        case "DEADLINE" -> this.saveDataLam.setDeadline(Integer.parseInt(pParameter[1]));
-                        case "TCHASIS" -> this.saveDataLam.setMountChasisInit(Integer.parseInt(pParameter[1]));
-                        case "TCARROCERIA" -> this.saveDataLam.setMountCarroceriaInit(Integer.parseInt(pParameter[1]));
-                        case "TRUEDA" -> this.saveDataLam.setMountRuedaInit(Integer.parseInt(pParameter[1]));
-                        case "TMOTOR" -> this.saveDataLam.setMountMotorInit(Integer.parseInt(pParameter[1]));
-                        case "TACCESORIO" -> this.saveDataLam.setMountAccesorioInit(Integer.parseInt(pParameter[1]));
-                        case "TENSAMBLADOR" -> this.saveDataLam.setMountEnsambladorInit(Integer.parseInt(pParameter[1]));
-                        default -> {}
-                    }
-                }
-            }
-        } catch (IOException e) {
-        }
-        return this.saveDataLam;
-    }
 }

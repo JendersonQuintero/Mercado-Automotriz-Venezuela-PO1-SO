@@ -163,7 +163,7 @@ public class Worker extends Thread {
                         this.vp.sem.acquire();
                         this.vp.warehouse.useStorage("SPECIAL");
                         this.vp.warehouse.addStorage("SPECIAL", (int) Math.floor(this.productionCounter));
-                        //System.out.println("Se agregó vehiculo SPECIAL al almacen");
+                        
                         this.vp.sem.release();
                     } catch (InterruptedException e) {
                         System.out.println(e);
@@ -178,7 +178,7 @@ public class Worker extends Thread {
                         this.vp.sem.acquire();
                         this.vp.warehouse.useStorage("STANDARD");
                         this.vp.warehouse.addStorage("STANDARD", (int) Math.floor(this.productionCounter));
-                        //System.out.println("Se agregó vehiculo STANDARD al almacen");
+                        
                         this.vp.sem.release();
                     } catch (InterruptedException e) {
                         System.out.println(e);

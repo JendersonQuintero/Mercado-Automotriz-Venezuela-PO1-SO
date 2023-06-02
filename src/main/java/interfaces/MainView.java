@@ -4,20 +4,76 @@
  */
 package interfaces;
 
+import main.InitData;
+import main.ReadTxt;
+import main.VehiclePlant;
+
 /**
  *
  * @author JendersonQ
  */
 public class MainView extends javax.swing.JFrame {
-
+    public VehiclePlant vpBu;
+    public VehiclePlant vpLa;
+    public InitData dataInit;
+    public ReadTxt txt;
+    
     /**
      * Creates new form MainView
      */
     public MainView() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        this.txt = new ReadTxt();
+        
+        this.dataInit = txt.getParametersInit();
     }
 
+    public void updateDataView() {
+        // ACTUALIZACIÓN DE DATOS PARA BUGATTI
+        this.textDaysRemainingBu.setText(Integer.toString(this.vpBu.deliveryDay));
+        this.textAChasisBu.setText(Integer.toString(this.vpBu.warehouse.currentStorageChasis));
+        this.textACarroceriaBu.setText(Integer.toString(this.vpBu.warehouse.currentStorageCarroceria));
+        this.textAMotorBu.setText(Integer.toString(this.vpBu.warehouse.currentStorageMotor));
+        this.textARuedaBu.setText(Integer.toString(this.vpBu.warehouse.currentStorageRueda));
+        this.textAAccesorioBu.setText(Integer.toString(this.vpBu.warehouse.currentStorageAccesorio));
+        this.textAVeStandardBu.setText(Integer.toString(this.vpBu.warehouse.getStandardVehicles()));
+        this.textAVeSpecialBu.setText(Integer.toString(this.vpBu.warehouse.getSpecialVehicles()));
+        this.updateWorkersBu();
+        
+        // ACTUALIZACIÓN DE DATOS PARA LAMBORGHINI
+        
+    }
+    
+    public void updateWorkersBu() {
+        this.textCChasisBu.setText(Integer.toString(this.vpBu.countWorkerChasis));
+        this.textCCarroceriaBu.setText(Integer.toString(this.vpBu.countWorkerCarroceria));
+        this.textCMotorBu.setText(Integer.toString(this.vpBu.countWorkerMotor));
+        this.textCRuedaBu.setText(Integer.toString(this.vpBu.countWorkerRueda));
+        this.textCAccesorioBu.setText(Integer.toString(this.vpBu.countWorkerAccesorio));
+        this.textEnsambladorBu.setText(Integer.toString(this.vpBu.countWorkerEnsamblador));
+        this.textGerenteBu.setText(Integer.toString(this.vpBu.countWorkerGerente));
+        this.textDirectorBu.setText(Integer.toString(this.vpBu.countWorkerDirector));
+        this.textTotalWorkersBu.setText(Integer.toString(this.vpBu.workers.size()));
+    }
+    
+    public void updateWorkersLam() {
+        this.textCChasisLam.setText(Integer.toString(this.vpLa.countWorkerChasis));
+        this.textCCarroceriaLam.setText(Integer.toString(this.vpLa.countWorkerCarroceria));
+        this.textCMotorLam.setText(Integer.toString(this.vpLa.countWorkerMotor));
+        this.textCRuedaLam.setText(Integer.toString(this.vpLa.countWorkerRueda));
+        this.textCAccesorioLam.setText(Integer.toString(this.vpLa.countWorkerAccesorio));
+        this.textEnsambladorLam.setText(Integer.toString(this.vpLa.countWorkerEnsamblador));
+        this.textGerenteLam.setText(Integer.toString(this.vpLa.countWorkerGerente));
+        this.textDirectorLam.setText(Integer.toString(this.vpLa.countWorkerDirector));
+        this.textTotalWorkersLam.setText(Integer.toString(this.vpLa.workers.size()));
+    }
+    
+    private void loadInitParameters() {
+        
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,27 +96,25 @@ public class MainView extends javax.swing.JFrame {
         titulo13 = new javax.swing.JLabel();
         titulo14 = new javax.swing.JLabel();
         titulo15 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        textDirectorBu = new javax.swing.JTextField();
+        textCChasisBu = new javax.swing.JTextField();
+        textCCarroceriaBu = new javax.swing.JTextField();
+        textCMotorBu = new javax.swing.JTextField();
+        textCRuedaBu = new javax.swing.JTextField();
+        textCAccesorioBu = new javax.swing.JTextField();
+        textEnsambladorBu = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnMinusChasisBu = new javax.swing.JButton();
+        btnMoreChasisBu = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
@@ -73,9 +127,9 @@ public class MainView extends javax.swing.JFrame {
         jButton15 = new javax.swing.JButton();
         titulo16 = new javax.swing.JLabel();
         titulo17 = new javax.swing.JLabel();
-        jTextField15 = new javax.swing.JTextField();
+        textGerenteBu = new javax.swing.JTextField();
         jTextField16 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
+        textTotalWorkersBu = new javax.swing.JTextField();
         titulo59 = new javax.swing.JLabel();
         panelAlmacenBugatti = new javax.swing.JPanel();
         titulo40 = new javax.swing.JLabel();
@@ -86,37 +140,37 @@ public class MainView extends javax.swing.JFrame {
         titulo46 = new javax.swing.JLabel();
         titulo47 = new javax.swing.JLabel();
         titulo48 = new javax.swing.JLabel();
-        jTextField25 = new javax.swing.JTextField();
-        jTextField26 = new javax.swing.JTextField();
-        jTextField27 = new javax.swing.JTextField();
-        jTextField28 = new javax.swing.JTextField();
-        jTextField29 = new javax.swing.JTextField();
-        jTextField30 = new javax.swing.JTextField();
-        jTextField31 = new javax.swing.JTextField();
+        textAChasisBu = new javax.swing.JTextField();
+        textACarroceriaBu = new javax.swing.JTextField();
+        textAMotorBu = new javax.swing.JTextField();
+        textARuedaBu = new javax.swing.JTextField();
+        textAAccesorioBu = new javax.swing.JTextField();
+        textAVeStandardBu = new javax.swing.JTextField();
+        textAVeSpecialBu = new javax.swing.JTextField();
         panelDiasBugatti = new javax.swing.JPanel();
-        jTextField21 = new javax.swing.JTextField();
         titulo60 = new javax.swing.JLabel();
+        textDaysRemainingBu = new javax.swing.JTextField();
         panelGerenteDirectorBugatti = new javax.swing.JPanel();
         titulo58 = new javax.swing.JLabel();
         titulo62 = new javax.swing.JLabel();
         titulo27 = new javax.swing.JLabel();
         titulo28 = new javax.swing.JLabel();
         titulo29 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
-        jTextField19 = new javax.swing.JTextField();
-        jTextField20 = new javax.swing.JTextField();
+        textDiscountGerenteBu = new javax.swing.JTextField();
+        textStatusDirectorBu = new javax.swing.JTextField();
+        textStatusGerenteBu = new javax.swing.JTextField();
+        textFoulGerenteBu = new javax.swing.JTextField();
         titulo33 = new javax.swing.JLabel();
         panelEstadisticasBugatti = new javax.swing.JPanel();
         titulo61 = new javax.swing.JLabel();
         titulo30 = new javax.swing.JLabel();
         titulo31 = new javax.swing.JLabel();
         titulo32 = new javax.swing.JLabel();
-        jTextField22 = new javax.swing.JTextField();
-        jTextField23 = new javax.swing.JTextField();
-        jTextField32 = new javax.swing.JTextField();
-        StopButton = new javax.swing.JButton();
-        StartButton1 = new javax.swing.JButton();
+        textEEarningsBu = new javax.swing.JTextField();
+        textEUtilityBu = new javax.swing.JTextField();
+        textECostBu = new javax.swing.JTextField();
+        btnStopSimulation = new javax.swing.JButton();
+        btnStartSimulation = new javax.swing.JButton();
         panelLamborghini = new javax.swing.JPanel();
         panelTituloLamborghini = new javax.swing.JPanel();
         titulo6 = new javax.swing.JLabel();
@@ -129,25 +183,25 @@ public class MainView extends javax.swing.JFrame {
         titulo70 = new javax.swing.JLabel();
         titulo71 = new javax.swing.JLabel();
         titulo72 = new javax.swing.JLabel();
-        jTextField51 = new javax.swing.JTextField();
-        jTextField52 = new javax.swing.JTextField();
-        jTextField53 = new javax.swing.JTextField();
-        jTextField54 = new javax.swing.JTextField();
-        jTextField55 = new javax.swing.JTextField();
-        jTextField56 = new javax.swing.JTextField();
-        jTextField57 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
+        textDirectorLam = new javax.swing.JTextField();
+        textCChasisLam = new javax.swing.JTextField();
+        textCCarroceriaLam = new javax.swing.JTextField();
+        textCMotorLam = new javax.swing.JTextField();
+        textCRuedaLam = new javax.swing.JTextField();
+        textCAccesorioLam = new javax.swing.JTextField();
+        textEnsambladorLam = new javax.swing.JTextField();
+        btnMinusChasisLam = new javax.swing.JLabel();
+        btnMinusMotorLam = new javax.swing.JLabel();
+        btnMinusCarroceriaLam = new javax.swing.JLabel();
+        btnMoreMotorLam = new javax.swing.JLabel();
+        btnMoreRuedaLam = new javax.swing.JLabel();
+        btnMoreCarroceriaLam = new javax.swing.JLabel();
+        btnMoreChasisLam = new javax.swing.JLabel();
+        btnMinusAccesorioLam = new javax.swing.JLabel();
+        btnMoreAccesorioLam = new javax.swing.JLabel();
+        btnMinusEnsambladorLam = new javax.swing.JLabel();
+        btnMoreEnsambladorLam = new javax.swing.JLabel();
+        btnMinusRuedaLam = new javax.swing.JLabel();
         jButton25 = new javax.swing.JButton();
         jButton26 = new javax.swing.JButton();
         jButton27 = new javax.swing.JButton();
@@ -162,9 +216,9 @@ public class MainView extends javax.swing.JFrame {
         jButton36 = new javax.swing.JButton();
         titulo73 = new javax.swing.JLabel();
         titulo74 = new javax.swing.JLabel();
-        jTextField58 = new javax.swing.JTextField();
+        textGerenteLam = new javax.swing.JTextField();
         jTextField59 = new javax.swing.JTextField();
-        jTextField60 = new javax.swing.JTextField();
+        textTotalWorkersLam = new javax.swing.JTextField();
         titulo75 = new javax.swing.JLabel();
         panelAlmacenLamborghini = new javax.swing.JPanel();
         titulo49 = new javax.swing.JLabel();
@@ -175,15 +229,15 @@ public class MainView extends javax.swing.JFrame {
         titulo55 = new javax.swing.JLabel();
         titulo56 = new javax.swing.JLabel();
         titulo57 = new javax.swing.JLabel();
-        jTextField36 = new javax.swing.JTextField();
-        jTextField37 = new javax.swing.JTextField();
-        jTextField38 = new javax.swing.JTextField();
-        jTextField39 = new javax.swing.JTextField();
-        jTextField40 = new javax.swing.JTextField();
-        jTextField41 = new javax.swing.JTextField();
-        jTextField42 = new javax.swing.JTextField();
+        textAVeSpecialLam = new javax.swing.JTextField();
+        textAChasisLam = new javax.swing.JTextField();
+        textACarroceriaLam = new javax.swing.JTextField();
+        textAMotorLam = new javax.swing.JTextField();
+        textARuedaLam = new javax.swing.JTextField();
+        textAAccesorioLam = new javax.swing.JTextField();
+        textAVeStandardLam = new javax.swing.JTextField();
         panelDiasLamborghini = new javax.swing.JPanel();
-        jTextField43 = new javax.swing.JTextField();
+        textDaysRemainingLam = new javax.swing.JTextField();
         titulo64 = new javax.swing.JLabel();
         panelGerenteDirectorLamborghini = new javax.swing.JPanel();
         titulo65 = new javax.swing.JLabel();
@@ -191,21 +245,21 @@ public class MainView extends javax.swing.JFrame {
         titulo34 = new javax.swing.JLabel();
         titulo35 = new javax.swing.JLabel();
         titulo36 = new javax.swing.JLabel();
-        jTextField44 = new javax.swing.JTextField();
-        jTextField45 = new javax.swing.JTextField();
-        jTextField46 = new javax.swing.JTextField();
-        jTextField47 = new javax.swing.JTextField();
+        textDiscountGerenteLam = new javax.swing.JTextField();
+        textStatusDirectorLam = new javax.swing.JTextField();
+        textStatusGerenteLam = new javax.swing.JTextField();
+        textFoulGerenteLam = new javax.swing.JTextField();
         titulo37 = new javax.swing.JLabel();
         panelEstadisticasLamborghini = new javax.swing.JPanel();
         titulo67 = new javax.swing.JLabel();
         titulo38 = new javax.swing.JLabel();
         titulo39 = new javax.swing.JLabel();
         titulo68 = new javax.swing.JLabel();
-        jTextField48 = new javax.swing.JTextField();
-        jTextField49 = new javax.swing.JTextField();
-        jTextField50 = new javax.swing.JTextField();
-        StartButton = new javax.swing.JButton();
-        StartButton2 = new javax.swing.JButton();
+        textEEarningsLam = new javax.swing.JTextField();
+        textEUtilityLam = new javax.swing.JTextField();
+        textECostLam = new javax.swing.JTextField();
+        btnLoadInitParameters = new javax.swing.JButton();
+        btnWatchGraphic = new javax.swing.JButton();
         salir = new javax.swing.JButton();
         tituloPrincipal = new javax.swing.JLabel();
         Copyright = new javax.swing.JLabel();
@@ -297,80 +351,60 @@ public class MainView extends javax.swing.JFrame {
         titulo15.setText("Director");
         panelEmpleadosBugatti.add(titulo15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 130, -1));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("1");
-        jTextField1.setToolTipText("");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        panelEmpleadosBugatti.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 50, 20));
+        textDirectorBu.setEditable(false);
+        textDirectorBu.setBackground(new java.awt.Color(255, 255, 255));
+        textDirectorBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textDirectorBu.setForeground(new java.awt.Color(0, 0, 0));
+        textDirectorBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textDirectorBu.setToolTipText("");
+        panelEmpleadosBugatti.add(textDirectorBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 50, 20));
 
-        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setToolTipText("");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-        panelEmpleadosBugatti.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 50, 20));
+        textCChasisBu.setEditable(false);
+        textCChasisBu.setBackground(new java.awt.Color(255, 255, 255));
+        textCChasisBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textCChasisBu.setForeground(new java.awt.Color(0, 0, 0));
+        textCChasisBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textCChasisBu.setToolTipText("");
+        panelEmpleadosBugatti.add(textCChasisBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 50, 20));
 
-        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField3.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField3.setToolTipText("");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
-        panelEmpleadosBugatti.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 50, 20));
+        textCCarroceriaBu.setEditable(false);
+        textCCarroceriaBu.setBackground(new java.awt.Color(255, 255, 255));
+        textCCarroceriaBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textCCarroceriaBu.setForeground(new java.awt.Color(0, 0, 0));
+        textCCarroceriaBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textCCarroceriaBu.setToolTipText("");
+        panelEmpleadosBugatti.add(textCCarroceriaBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 50, 20));
 
-        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setToolTipText("");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
-        panelEmpleadosBugatti.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 50, 20));
+        textCMotorBu.setEditable(false);
+        textCMotorBu.setBackground(new java.awt.Color(255, 255, 255));
+        textCMotorBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textCMotorBu.setForeground(new java.awt.Color(0, 0, 0));
+        textCMotorBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textCMotorBu.setToolTipText("");
+        panelEmpleadosBugatti.add(textCMotorBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 50, 20));
 
-        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField5.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField5.setToolTipText("");
-        panelEmpleadosBugatti.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 50, 20));
+        textCRuedaBu.setEditable(false);
+        textCRuedaBu.setBackground(new java.awt.Color(255, 255, 255));
+        textCRuedaBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textCRuedaBu.setForeground(new java.awt.Color(0, 0, 0));
+        textCRuedaBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textCRuedaBu.setToolTipText("");
+        panelEmpleadosBugatti.add(textCRuedaBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 50, 20));
 
-        jTextField6.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField6.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField6.setToolTipText("");
-        panelEmpleadosBugatti.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 50, 20));
+        textCAccesorioBu.setEditable(false);
+        textCAccesorioBu.setBackground(new java.awt.Color(255, 255, 255));
+        textCAccesorioBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textCAccesorioBu.setForeground(new java.awt.Color(0, 0, 0));
+        textCAccesorioBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textCAccesorioBu.setToolTipText("");
+        panelEmpleadosBugatti.add(textCAccesorioBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 50, 20));
 
-        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField7.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField7.setToolTipText("");
-        panelEmpleadosBugatti.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 50, 20));
-
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("-");
-        panelEmpleadosBugatti.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 30, 20));
+        textEnsambladorBu.setBackground(new java.awt.Color(255, 255, 255));
+        textEnsambladorBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textEnsambladorBu.setForeground(new java.awt.Color(0, 0, 0));
+        textEnsambladorBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textEnsambladorBu.setToolTipText("");
+        panelEmpleadosBugatti.add(textEnsambladorBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 50, 20));
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -397,11 +431,6 @@ public class MainView extends javax.swing.JFrame {
         jLabel6.setText("+");
         panelEmpleadosBugatti.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 30, 20));
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("+");
-        panelEmpleadosBugatti.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 30, 20));
-
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("-");
@@ -427,25 +456,27 @@ public class MainView extends javax.swing.JFrame {
         jLabel12.setText("-");
         panelEmpleadosBugatti.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 30, 20));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnMinusChasisBu.setBackground(new java.awt.Color(255, 255, 255));
+        btnMinusChasisBu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnMinusChasisBu.setForeground(new java.awt.Color(0, 0, 0));
+        btnMinusChasisBu.setText("-");
+        btnMinusChasisBu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnMinusChasisBuActionPerformed(evt);
             }
         });
-        panelEmpleadosBugatti.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 30, 20));
+        panelEmpleadosBugatti.add(btnMinusChasisBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 30, 20));
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnMoreChasisBu.setBackground(new java.awt.Color(255, 255, 255));
+        btnMoreChasisBu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnMoreChasisBu.setForeground(new java.awt.Color(0, 0, 0));
+        btnMoreChasisBu.setText("+");
+        btnMoreChasisBu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnMoreChasisBuActionPerformed(evt);
             }
         });
-        panelEmpleadosBugatti.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 30, 20));
+        panelEmpleadosBugatti.add(btnMoreChasisBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 30, 20));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
@@ -561,30 +592,25 @@ public class MainView extends javax.swing.JFrame {
         titulo17.setText("Gerente:");
         panelEmpleadosBugatti.add(titulo17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
 
-        jTextField15.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField15.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField15.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField15.setText("1");
-        jTextField15.setToolTipText("");
-        panelEmpleadosBugatti.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 50, 20));
+        textGerenteBu.setEditable(false);
+        textGerenteBu.setBackground(new java.awt.Color(255, 255, 255));
+        textGerenteBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textGerenteBu.setForeground(new java.awt.Color(0, 0, 0));
+        textGerenteBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textGerenteBu.setToolTipText("");
+        panelEmpleadosBugatti.add(textGerenteBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 50, 20));
 
         jTextField16.setBackground(new java.awt.Color(255, 255, 255));
         jTextField16.setText("jTextField1");
         panelEmpleadosBugatti.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 50, 20));
 
-        jTextField17.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField17.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField17.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField17.setText("12");
-        jTextField17.setToolTipText("");
-        jTextField17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField17ActionPerformed(evt);
-            }
-        });
-        panelEmpleadosBugatti.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 50, 20));
+        textTotalWorkersBu.setEditable(false);
+        textTotalWorkersBu.setBackground(new java.awt.Color(255, 255, 255));
+        textTotalWorkersBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textTotalWorkersBu.setForeground(new java.awt.Color(0, 0, 0));
+        textTotalWorkersBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textTotalWorkersBu.setToolTipText("");
+        panelEmpleadosBugatti.add(textTotalWorkersBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 50, 20));
 
         titulo59.setBackground(new java.awt.Color(0, 0, 0));
         titulo59.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
@@ -655,54 +681,61 @@ public class MainView extends javax.swing.JFrame {
         titulo48.setText("Vehiculos Estandar:");
         panelAlmacenBugatti.add(titulo48, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 130, -1));
 
-        jTextField25.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField25.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField25.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField25.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField25.setToolTipText("");
-        panelAlmacenBugatti.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 50, 20));
+        textAChasisBu.setEditable(false);
+        textAChasisBu.setBackground(new java.awt.Color(255, 255, 255));
+        textAChasisBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textAChasisBu.setForeground(new java.awt.Color(0, 0, 0));
+        textAChasisBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textAChasisBu.setToolTipText("");
+        panelAlmacenBugatti.add(textAChasisBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 50, 20));
 
-        jTextField26.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField26.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField26.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField26.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField26.setToolTipText("");
-        panelAlmacenBugatti.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 50, 20));
+        textACarroceriaBu.setEditable(false);
+        textACarroceriaBu.setBackground(new java.awt.Color(255, 255, 255));
+        textACarroceriaBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textACarroceriaBu.setForeground(new java.awt.Color(0, 0, 0));
+        textACarroceriaBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textACarroceriaBu.setToolTipText("");
+        panelAlmacenBugatti.add(textACarroceriaBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 50, 20));
 
-        jTextField27.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField27.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField27.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField27.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField27.setToolTipText("");
-        panelAlmacenBugatti.add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 50, 20));
+        textAMotorBu.setEditable(false);
+        textAMotorBu.setBackground(new java.awt.Color(255, 255, 255));
+        textAMotorBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textAMotorBu.setForeground(new java.awt.Color(0, 0, 0));
+        textAMotorBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textAMotorBu.setToolTipText("");
+        panelAlmacenBugatti.add(textAMotorBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 50, 20));
 
-        jTextField28.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField28.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField28.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField28.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField28.setToolTipText("");
-        panelAlmacenBugatti.add(jTextField28, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 50, 20));
+        textARuedaBu.setEditable(false);
+        textARuedaBu.setBackground(new java.awt.Color(255, 255, 255));
+        textARuedaBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textARuedaBu.setForeground(new java.awt.Color(0, 0, 0));
+        textARuedaBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textARuedaBu.setToolTipText("");
+        panelAlmacenBugatti.add(textARuedaBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 50, 20));
 
-        jTextField29.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField29.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField29.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField29.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField29.setToolTipText("");
-        panelAlmacenBugatti.add(jTextField29, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 50, 20));
+        textAAccesorioBu.setEditable(false);
+        textAAccesorioBu.setBackground(new java.awt.Color(255, 255, 255));
+        textAAccesorioBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textAAccesorioBu.setForeground(new java.awt.Color(0, 0, 0));
+        textAAccesorioBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textAAccesorioBu.setToolTipText("");
+        panelAlmacenBugatti.add(textAAccesorioBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 50, 20));
 
-        jTextField30.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField30.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField30.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField30.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField30.setToolTipText("");
-        panelAlmacenBugatti.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 50, 20));
+        textAVeStandardBu.setEditable(false);
+        textAVeStandardBu.setBackground(new java.awt.Color(255, 255, 255));
+        textAVeStandardBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textAVeStandardBu.setForeground(new java.awt.Color(0, 0, 0));
+        textAVeStandardBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textAVeStandardBu.setToolTipText("");
+        panelAlmacenBugatti.add(textAVeStandardBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 50, 20));
 
-        jTextField31.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField31.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField31.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField31.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField31.setToolTipText("");
-        panelAlmacenBugatti.add(jTextField31, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 50, 20));
+        textAVeSpecialBu.setEditable(false);
+        textAVeSpecialBu.setBackground(new java.awt.Color(255, 255, 255));
+        textAVeSpecialBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textAVeSpecialBu.setForeground(new java.awt.Color(0, 0, 0));
+        textAVeSpecialBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textAVeSpecialBu.setToolTipText("");
+        panelAlmacenBugatti.add(textAVeSpecialBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 50, 20));
 
         panelBugatti.add(panelAlmacenBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 290, 270));
 
@@ -710,19 +743,19 @@ public class MainView extends javax.swing.JFrame {
         panelDiasBugatti.setForeground(new java.awt.Color(0, 0, 0));
         panelDiasBugatti.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField21.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField21.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField21.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField21.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField21.setToolTipText("");
-        panelDiasBugatti.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 80, 30));
-
         titulo60.setBackground(new java.awt.Color(0, 0, 0));
         titulo60.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         titulo60.setForeground(new java.awt.Color(0, 0, 0));
         titulo60.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titulo60.setText("Dias para la Entrega");
         panelDiasBugatti.add(titulo60, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 20));
+
+        textDaysRemainingBu.setEditable(false);
+        textDaysRemainingBu.setBackground(new java.awt.Color(255, 255, 255));
+        textDaysRemainingBu.setForeground(new java.awt.Color(0, 0, 0));
+        textDaysRemainingBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textDaysRemainingBu.setToolTipText("");
+        panelDiasBugatti.add(textDaysRemainingBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 90, 30));
 
         panelBugatti.add(panelDiasBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 290, 70));
 
@@ -765,32 +798,36 @@ public class MainView extends javax.swing.JFrame {
         titulo29.setText("Dinero descontado:");
         panelGerenteDirectorBugatti.add(titulo29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 130, -1));
 
-        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField10.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField10.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField10.setToolTipText("");
-        panelGerenteDirectorBugatti.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 110, 20));
+        textDiscountGerenteBu.setEditable(false);
+        textDiscountGerenteBu.setBackground(new java.awt.Color(255, 255, 255));
+        textDiscountGerenteBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textDiscountGerenteBu.setForeground(new java.awt.Color(0, 0, 0));
+        textDiscountGerenteBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textDiscountGerenteBu.setToolTipText("");
+        panelGerenteDirectorBugatti.add(textDiscountGerenteBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 110, 20));
 
-        jTextField18.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField18.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField18.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField18.setToolTipText("");
-        panelGerenteDirectorBugatti.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 240, 20));
+        textStatusDirectorBu.setEditable(false);
+        textStatusDirectorBu.setBackground(new java.awt.Color(255, 255, 255));
+        textStatusDirectorBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textStatusDirectorBu.setForeground(new java.awt.Color(0, 0, 0));
+        textStatusDirectorBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textStatusDirectorBu.setToolTipText("");
+        panelGerenteDirectorBugatti.add(textStatusDirectorBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 240, 20));
 
-        jTextField19.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField19.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField19.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField19.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField19.setToolTipText("");
-        panelGerenteDirectorBugatti.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 240, 20));
+        textStatusGerenteBu.setEditable(false);
+        textStatusGerenteBu.setBackground(new java.awt.Color(255, 255, 255));
+        textStatusGerenteBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textStatusGerenteBu.setForeground(new java.awt.Color(0, 0, 0));
+        textStatusGerenteBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textStatusGerenteBu.setToolTipText("");
+        panelGerenteDirectorBugatti.add(textStatusGerenteBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 240, 20));
 
-        jTextField20.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField20.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField20.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField20.setToolTipText("");
-        panelGerenteDirectorBugatti.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 110, 20));
+        textFoulGerenteBu.setEditable(false);
+        textFoulGerenteBu.setBackground(new java.awt.Color(255, 255, 255));
+        textFoulGerenteBu.setForeground(new java.awt.Color(0, 0, 0));
+        textFoulGerenteBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textFoulGerenteBu.setToolTipText("");
+        panelGerenteDirectorBugatti.add(textFoulGerenteBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 110, 20));
 
         titulo33.setBackground(new java.awt.Color(0, 0, 0));
         titulo33.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -830,48 +867,56 @@ public class MainView extends javax.swing.JFrame {
         titulo32.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         titulo32.setForeground(new java.awt.Color(0, 0, 0));
         titulo32.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo32.setText("Utilidades:");
+        titulo32.setText("Utilidad:");
         panelEstadisticasBugatti.add(titulo32, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 120, -1));
 
-        jTextField22.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField22.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField22.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField22.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField22.setToolTipText("");
-        panelEstadisticasBugatti.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 150, 20));
+        textEEarningsBu.setEditable(false);
+        textEEarningsBu.setBackground(new java.awt.Color(255, 255, 255));
+        textEEarningsBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textEEarningsBu.setForeground(new java.awt.Color(0, 0, 0));
+        textEEarningsBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textEEarningsBu.setToolTipText("");
+        panelEstadisticasBugatti.add(textEEarningsBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 150, 20));
 
-        jTextField23.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField23.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField23.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField23.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField23.setToolTipText("");
-        panelEstadisticasBugatti.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 150, 20));
+        textEUtilityBu.setEditable(false);
+        textEUtilityBu.setBackground(new java.awt.Color(255, 255, 255));
+        textEUtilityBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textEUtilityBu.setForeground(new java.awt.Color(0, 0, 0));
+        textEUtilityBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textEUtilityBu.setToolTipText("");
+        panelEstadisticasBugatti.add(textEUtilityBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 150, 20));
 
-        jTextField32.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField32.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField32.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField32.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField32.setToolTipText("");
-        panelEstadisticasBugatti.add(jTextField32, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 150, 20));
+        textECostBu.setEditable(false);
+        textECostBu.setBackground(new java.awt.Color(255, 255, 255));
+        textECostBu.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textECostBu.setForeground(new java.awt.Color(0, 0, 0));
+        textECostBu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textECostBu.setToolTipText("");
+        panelEstadisticasBugatti.add(textECostBu, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 150, 20));
 
         panelBugatti.add(panelEstadisticasBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 340, 140));
 
-        StopButton.setBackground(new java.awt.Color(204, 204, 204));
-        StopButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        StopButton.setForeground(new java.awt.Color(0, 0, 0));
-        StopButton.setText("Terminar Simulación");
-        StopButton.addActionListener(new java.awt.event.ActionListener() {
+        btnStopSimulation.setBackground(new java.awt.Color(204, 204, 204));
+        btnStopSimulation.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnStopSimulation.setForeground(new java.awt.Color(0, 0, 0));
+        btnStopSimulation.setText("Terminar Simulación");
+        btnStopSimulation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                StopButtonActionPerformed(evt);
+                btnStopSimulationActionPerformed(evt);
             }
         });
-        panelBugatti.add(StopButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 640, 340, 30));
+        panelBugatti.add(btnStopSimulation, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 640, 340, 30));
 
-        StartButton1.setBackground(new java.awt.Color(204, 204, 204));
-        StartButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        StartButton1.setForeground(new java.awt.Color(0, 0, 0));
-        StartButton1.setText("Iniciar Simulación");
-        panelBugatti.add(StartButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 340, 30));
+        btnStartSimulation.setBackground(new java.awt.Color(204, 204, 204));
+        btnStartSimulation.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnStartSimulation.setForeground(new java.awt.Color(0, 0, 0));
+        btnStartSimulation.setText("Iniciar Simulación");
+        btnStartSimulation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnStartSimulationActionPerformed(evt);
+            }
+        });
+        panelBugatti.add(btnStartSimulation, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 340, 30));
 
         panelPantalla.add(panelBugatti, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 690, 690));
 
@@ -885,7 +930,7 @@ public class MainView extends javax.swing.JFrame {
         titulo6.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         titulo6.setForeground(new java.awt.Color(0, 0, 0));
         titulo6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titulo6.setText("Lamborguini");
+        titulo6.setText("Lamborghini");
         titulo6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         panelTituloLamborghini.add(titulo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 710, 40));
 
@@ -951,135 +996,141 @@ public class MainView extends javax.swing.JFrame {
         titulo72.setText("Director");
         panelEmpleadosLamborghini.add(titulo72, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 130, -1));
 
-        jTextField51.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField51.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField51.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField51.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField51.setText("1");
-        jTextField51.setToolTipText("");
-        jTextField51.addActionListener(new java.awt.event.ActionListener() {
+        textDirectorLam.setEditable(false);
+        textDirectorLam.setBackground(new java.awt.Color(255, 255, 255));
+        textDirectorLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textDirectorLam.setForeground(new java.awt.Color(0, 0, 0));
+        textDirectorLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textDirectorLam.setToolTipText("");
+        textDirectorLam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField51ActionPerformed(evt);
+                textDirectorLamActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jTextField51, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 50, 20));
+        panelEmpleadosLamborghini.add(textDirectorLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 50, 20));
 
-        jTextField52.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField52.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField52.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField52.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField52.setToolTipText("");
-        jTextField52.addActionListener(new java.awt.event.ActionListener() {
+        textCChasisLam.setEditable(false);
+        textCChasisLam.setBackground(new java.awt.Color(255, 255, 255));
+        textCChasisLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textCChasisLam.setForeground(new java.awt.Color(0, 0, 0));
+        textCChasisLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textCChasisLam.setToolTipText("");
+        textCChasisLam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField52ActionPerformed(evt);
+                textCChasisLamActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jTextField52, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 50, 20));
+        panelEmpleadosLamborghini.add(textCChasisLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 50, 20));
 
-        jTextField53.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField53.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField53.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField53.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField53.setToolTipText("");
-        jTextField53.addActionListener(new java.awt.event.ActionListener() {
+        textCCarroceriaLam.setEditable(false);
+        textCCarroceriaLam.setBackground(new java.awt.Color(255, 255, 255));
+        textCCarroceriaLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textCCarroceriaLam.setForeground(new java.awt.Color(0, 0, 0));
+        textCCarroceriaLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textCCarroceriaLam.setToolTipText("");
+        textCCarroceriaLam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField53ActionPerformed(evt);
+                textCCarroceriaLamActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jTextField53, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 50, 20));
+        panelEmpleadosLamborghini.add(textCCarroceriaLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 50, 20));
 
-        jTextField54.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField54.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField54.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField54.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField54.setToolTipText("");
-        jTextField54.addActionListener(new java.awt.event.ActionListener() {
+        textCMotorLam.setEditable(false);
+        textCMotorLam.setBackground(new java.awt.Color(255, 255, 255));
+        textCMotorLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textCMotorLam.setForeground(new java.awt.Color(0, 0, 0));
+        textCMotorLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textCMotorLam.setToolTipText("");
+        textCMotorLam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField54ActionPerformed(evt);
+                textCMotorLamActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jTextField54, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 50, 20));
+        panelEmpleadosLamborghini.add(textCMotorLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 50, 20));
 
-        jTextField55.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField55.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField55.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField55.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField55.setToolTipText("");
-        panelEmpleadosLamborghini.add(jTextField55, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 50, 20));
+        textCRuedaLam.setEditable(false);
+        textCRuedaLam.setBackground(new java.awt.Color(255, 255, 255));
+        textCRuedaLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textCRuedaLam.setForeground(new java.awt.Color(0, 0, 0));
+        textCRuedaLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textCRuedaLam.setToolTipText("");
+        panelEmpleadosLamborghini.add(textCRuedaLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 50, 20));
 
-        jTextField56.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField56.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField56.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField56.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField56.setToolTipText("");
-        panelEmpleadosLamborghini.add(jTextField56, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 50, 20));
+        textCAccesorioLam.setEditable(false);
+        textCAccesorioLam.setBackground(new java.awt.Color(255, 255, 255));
+        textCAccesorioLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textCAccesorioLam.setForeground(new java.awt.Color(0, 0, 0));
+        textCAccesorioLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textCAccesorioLam.setToolTipText("");
+        panelEmpleadosLamborghini.add(textCAccesorioLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 50, 20));
 
-        jTextField57.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField57.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField57.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField57.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField57.setToolTipText("");
-        panelEmpleadosLamborghini.add(jTextField57, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 50, 20));
+        textEnsambladorLam.setEditable(false);
+        textEnsambladorLam.setBackground(new java.awt.Color(255, 255, 255));
+        textEnsambladorLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textEnsambladorLam.setForeground(new java.awt.Color(0, 0, 0));
+        textEnsambladorLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textEnsambladorLam.setToolTipText("");
+        panelEmpleadosLamborghini.add(textEnsambladorLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 50, 20));
 
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("-");
-        panelEmpleadosLamborghini.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 30, 20));
+        btnMinusChasisLam.setForeground(new java.awt.Color(0, 0, 0));
+        btnMinusChasisLam.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnMinusChasisLam.setText("-");
+        panelEmpleadosLamborghini.add(btnMinusChasisLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 30, 20));
 
-        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("-");
-        panelEmpleadosLamborghini.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 30, 20));
+        btnMinusMotorLam.setForeground(new java.awt.Color(0, 0, 0));
+        btnMinusMotorLam.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnMinusMotorLam.setText("-");
+        panelEmpleadosLamborghini.add(btnMinusMotorLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 30, 20));
 
-        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("-");
-        panelEmpleadosLamborghini.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 30, 20));
+        btnMinusCarroceriaLam.setForeground(new java.awt.Color(0, 0, 0));
+        btnMinusCarroceriaLam.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnMinusCarroceriaLam.setText("-");
+        panelEmpleadosLamborghini.add(btnMinusCarroceriaLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 30, 20));
 
-        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("+");
-        panelEmpleadosLamborghini.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 30, 20));
+        btnMoreMotorLam.setForeground(new java.awt.Color(0, 0, 0));
+        btnMoreMotorLam.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnMoreMotorLam.setText("+");
+        panelEmpleadosLamborghini.add(btnMoreMotorLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 30, 20));
 
-        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("+");
-        panelEmpleadosLamborghini.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 30, 20));
+        btnMoreRuedaLam.setForeground(new java.awt.Color(0, 0, 0));
+        btnMoreRuedaLam.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnMoreRuedaLam.setText("+");
+        panelEmpleadosLamborghini.add(btnMoreRuedaLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 30, 20));
 
-        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("+");
-        panelEmpleadosLamborghini.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 30, 20));
+        btnMoreCarroceriaLam.setForeground(new java.awt.Color(0, 0, 0));
+        btnMoreCarroceriaLam.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnMoreCarroceriaLam.setText("+");
+        panelEmpleadosLamborghini.add(btnMoreCarroceriaLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 30, 20));
 
-        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("+");
-        panelEmpleadosLamborghini.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 30, 20));
+        btnMoreChasisLam.setForeground(new java.awt.Color(0, 0, 0));
+        btnMoreChasisLam.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnMoreChasisLam.setText("+");
+        panelEmpleadosLamborghini.add(btnMoreChasisLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 30, 20));
 
-        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("-");
-        panelEmpleadosLamborghini.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 30, 20));
+        btnMinusAccesorioLam.setForeground(new java.awt.Color(0, 0, 0));
+        btnMinusAccesorioLam.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnMinusAccesorioLam.setText("-");
+        panelEmpleadosLamborghini.add(btnMinusAccesorioLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 30, 20));
 
-        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setText("+");
-        panelEmpleadosLamborghini.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 30, 20));
+        btnMoreAccesorioLam.setForeground(new java.awt.Color(0, 0, 0));
+        btnMoreAccesorioLam.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnMoreAccesorioLam.setText("+");
+        panelEmpleadosLamborghini.add(btnMoreAccesorioLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 30, 20));
 
-        jLabel22.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setText("-");
-        panelEmpleadosLamborghini.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 30, 20));
+        btnMinusEnsambladorLam.setForeground(new java.awt.Color(0, 0, 0));
+        btnMinusEnsambladorLam.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnMinusEnsambladorLam.setText("-");
+        panelEmpleadosLamborghini.add(btnMinusEnsambladorLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 30, 20));
 
-        jLabel23.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setText("+");
-        panelEmpleadosLamborghini.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 30, 20));
+        btnMoreEnsambladorLam.setForeground(new java.awt.Color(0, 0, 0));
+        btnMoreEnsambladorLam.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnMoreEnsambladorLam.setText("+");
+        panelEmpleadosLamborghini.add(btnMoreEnsambladorLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 30, 20));
 
-        jLabel24.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setText("-");
-        panelEmpleadosLamborghini.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 30, 20));
+        btnMinusRuedaLam.setForeground(new java.awt.Color(0, 0, 0));
+        btnMinusRuedaLam.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnMinusRuedaLam.setText("-");
+        panelEmpleadosLamborghini.add(btnMinusRuedaLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 30, 20));
 
         jButton25.setBackground(new java.awt.Color(255, 255, 255));
         jButton25.setFont(new java.awt.Font("Segoe UI", 1, 8)); // NOI18N
@@ -1215,30 +1266,30 @@ public class MainView extends javax.swing.JFrame {
         titulo74.setText("Gerente:");
         panelEmpleadosLamborghini.add(titulo74, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
 
-        jTextField58.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField58.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField58.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField58.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField58.setText("1");
-        jTextField58.setToolTipText("");
-        panelEmpleadosLamborghini.add(jTextField58, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 50, 20));
+        textGerenteLam.setEditable(false);
+        textGerenteLam.setBackground(new java.awt.Color(255, 255, 255));
+        textGerenteLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textGerenteLam.setForeground(new java.awt.Color(0, 0, 0));
+        textGerenteLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textGerenteLam.setToolTipText("");
+        panelEmpleadosLamborghini.add(textGerenteLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 50, 20));
 
         jTextField59.setBackground(new java.awt.Color(255, 255, 255));
         jTextField59.setText("jTextField1");
         panelEmpleadosLamborghini.add(jTextField59, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 50, 20));
 
-        jTextField60.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField60.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField60.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField60.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField60.setText("12");
-        jTextField60.setToolTipText("");
-        jTextField60.addActionListener(new java.awt.event.ActionListener() {
+        textTotalWorkersLam.setEditable(false);
+        textTotalWorkersLam.setBackground(new java.awt.Color(255, 255, 255));
+        textTotalWorkersLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textTotalWorkersLam.setForeground(new java.awt.Color(0, 0, 0));
+        textTotalWorkersLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textTotalWorkersLam.setToolTipText("");
+        textTotalWorkersLam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField60ActionPerformed(evt);
+                textTotalWorkersLamActionPerformed(evt);
             }
         });
-        panelEmpleadosLamborghini.add(jTextField60, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 50, 20));
+        panelEmpleadosLamborghini.add(textTotalWorkersLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 50, 20));
 
         titulo75.setBackground(new java.awt.Color(0, 0, 0));
         titulo75.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
@@ -1309,54 +1360,61 @@ public class MainView extends javax.swing.JFrame {
         titulo57.setText("Vehiculos Estandar:");
         panelAlmacenLamborghini.add(titulo57, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 130, -1));
 
-        jTextField36.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField36.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField36.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField36.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField36.setToolTipText("");
-        panelAlmacenLamborghini.add(jTextField36, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 50, 20));
+        textAVeSpecialLam.setEditable(false);
+        textAVeSpecialLam.setBackground(new java.awt.Color(255, 255, 255));
+        textAVeSpecialLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textAVeSpecialLam.setForeground(new java.awt.Color(0, 0, 0));
+        textAVeSpecialLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textAVeSpecialLam.setToolTipText("");
+        panelAlmacenLamborghini.add(textAVeSpecialLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 50, 20));
 
-        jTextField37.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField37.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField37.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField37.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField37.setToolTipText("");
-        panelAlmacenLamborghini.add(jTextField37, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 50, 20));
+        textAChasisLam.setEditable(false);
+        textAChasisLam.setBackground(new java.awt.Color(255, 255, 255));
+        textAChasisLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textAChasisLam.setForeground(new java.awt.Color(0, 0, 0));
+        textAChasisLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textAChasisLam.setToolTipText("");
+        panelAlmacenLamborghini.add(textAChasisLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 50, 20));
 
-        jTextField38.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField38.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField38.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField38.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField38.setToolTipText("");
-        panelAlmacenLamborghini.add(jTextField38, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 50, 20));
+        textACarroceriaLam.setEditable(false);
+        textACarroceriaLam.setBackground(new java.awt.Color(255, 255, 255));
+        textACarroceriaLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textACarroceriaLam.setForeground(new java.awt.Color(0, 0, 0));
+        textACarroceriaLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textACarroceriaLam.setToolTipText("");
+        panelAlmacenLamborghini.add(textACarroceriaLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 50, 20));
 
-        jTextField39.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField39.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField39.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField39.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField39.setToolTipText("");
-        panelAlmacenLamborghini.add(jTextField39, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 50, 20));
+        textAMotorLam.setEditable(false);
+        textAMotorLam.setBackground(new java.awt.Color(255, 255, 255));
+        textAMotorLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textAMotorLam.setForeground(new java.awt.Color(0, 0, 0));
+        textAMotorLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textAMotorLam.setToolTipText("");
+        panelAlmacenLamborghini.add(textAMotorLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 50, 20));
 
-        jTextField40.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField40.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField40.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField40.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField40.setToolTipText("");
-        panelAlmacenLamborghini.add(jTextField40, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 50, 20));
+        textARuedaLam.setEditable(false);
+        textARuedaLam.setBackground(new java.awt.Color(255, 255, 255));
+        textARuedaLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textARuedaLam.setForeground(new java.awt.Color(0, 0, 0));
+        textARuedaLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textARuedaLam.setToolTipText("");
+        panelAlmacenLamborghini.add(textARuedaLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 50, 20));
 
-        jTextField41.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField41.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField41.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField41.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField41.setToolTipText("");
-        panelAlmacenLamborghini.add(jTextField41, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 50, 20));
+        textAAccesorioLam.setEditable(false);
+        textAAccesorioLam.setBackground(new java.awt.Color(255, 255, 255));
+        textAAccesorioLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textAAccesorioLam.setForeground(new java.awt.Color(0, 0, 0));
+        textAAccesorioLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textAAccesorioLam.setToolTipText("");
+        panelAlmacenLamborghini.add(textAAccesorioLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 50, 20));
 
-        jTextField42.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField42.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField42.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField42.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField42.setToolTipText("");
-        panelAlmacenLamborghini.add(jTextField42, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 50, 20));
+        textAVeStandardLam.setEditable(false);
+        textAVeStandardLam.setBackground(new java.awt.Color(255, 255, 255));
+        textAVeStandardLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textAVeStandardLam.setForeground(new java.awt.Color(0, 0, 0));
+        textAVeStandardLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textAVeStandardLam.setToolTipText("");
+        panelAlmacenLamborghini.add(textAVeStandardLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 50, 20));
 
         panelLamborghini.add(panelAlmacenLamborghini, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 290, 270));
 
@@ -1364,12 +1422,12 @@ public class MainView extends javax.swing.JFrame {
         panelDiasLamborghini.setForeground(new java.awt.Color(0, 0, 0));
         panelDiasLamborghini.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField43.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField43.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField43.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField43.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField43.setToolTipText("");
-        panelDiasLamborghini.add(jTextField43, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 80, 30));
+        textDaysRemainingLam.setEditable(false);
+        textDaysRemainingLam.setBackground(new java.awt.Color(255, 255, 255));
+        textDaysRemainingLam.setForeground(new java.awt.Color(0, 0, 0));
+        textDaysRemainingLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textDaysRemainingLam.setToolTipText("");
+        panelDiasLamborghini.add(textDaysRemainingLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 80, 30));
 
         titulo64.setBackground(new java.awt.Color(0, 0, 0));
         titulo64.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
@@ -1419,32 +1477,36 @@ public class MainView extends javax.swing.JFrame {
         titulo36.setText("Dinero descontado:");
         panelGerenteDirectorLamborghini.add(titulo36, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 130, -1));
 
-        jTextField44.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField44.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField44.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField44.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField44.setToolTipText("");
-        panelGerenteDirectorLamborghini.add(jTextField44, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 110, 20));
+        textDiscountGerenteLam.setEditable(false);
+        textDiscountGerenteLam.setBackground(new java.awt.Color(255, 255, 255));
+        textDiscountGerenteLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textDiscountGerenteLam.setForeground(new java.awt.Color(0, 0, 0));
+        textDiscountGerenteLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textDiscountGerenteLam.setToolTipText("");
+        panelGerenteDirectorLamborghini.add(textDiscountGerenteLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 110, 20));
 
-        jTextField45.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField45.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField45.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField45.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField45.setToolTipText("");
-        panelGerenteDirectorLamborghini.add(jTextField45, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 240, 20));
+        textStatusDirectorLam.setEditable(false);
+        textStatusDirectorLam.setBackground(new java.awt.Color(255, 255, 255));
+        textStatusDirectorLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textStatusDirectorLam.setForeground(new java.awt.Color(0, 0, 0));
+        textStatusDirectorLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textStatusDirectorLam.setToolTipText("");
+        panelGerenteDirectorLamborghini.add(textStatusDirectorLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 240, 20));
 
-        jTextField46.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField46.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField46.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField46.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField46.setToolTipText("");
-        panelGerenteDirectorLamborghini.add(jTextField46, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 240, 20));
+        textStatusGerenteLam.setEditable(false);
+        textStatusGerenteLam.setBackground(new java.awt.Color(255, 255, 255));
+        textStatusGerenteLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textStatusGerenteLam.setForeground(new java.awt.Color(0, 0, 0));
+        textStatusGerenteLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textStatusGerenteLam.setToolTipText("");
+        panelGerenteDirectorLamborghini.add(textStatusGerenteLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 240, 20));
 
-        jTextField47.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField47.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField47.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField47.setToolTipText("");
-        panelGerenteDirectorLamborghini.add(jTextField47, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 110, 20));
+        textFoulGerenteLam.setEditable(false);
+        textFoulGerenteLam.setBackground(new java.awt.Color(255, 255, 255));
+        textFoulGerenteLam.setForeground(new java.awt.Color(0, 0, 0));
+        textFoulGerenteLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textFoulGerenteLam.setToolTipText("");
+        panelGerenteDirectorLamborghini.add(textFoulGerenteLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 110, 20));
 
         titulo37.setBackground(new java.awt.Color(0, 0, 0));
         titulo37.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1484,54 +1546,57 @@ public class MainView extends javax.swing.JFrame {
         titulo68.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         titulo68.setForeground(new java.awt.Color(0, 0, 0));
         titulo68.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titulo68.setText("Utilidades:");
+        titulo68.setText("Utilidad:");
         panelEstadisticasLamborghini.add(titulo68, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 120, -1));
 
-        jTextField48.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField48.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField48.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField48.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField48.setToolTipText("");
-        panelEstadisticasLamborghini.add(jTextField48, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 150, 20));
+        textEEarningsLam.setEditable(false);
+        textEEarningsLam.setBackground(new java.awt.Color(255, 255, 255));
+        textEEarningsLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textEEarningsLam.setForeground(new java.awt.Color(0, 0, 0));
+        textEEarningsLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textEEarningsLam.setToolTipText("");
+        panelEstadisticasLamborghini.add(textEEarningsLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 150, 20));
 
-        jTextField49.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField49.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField49.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField49.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField49.setToolTipText("");
-        panelEstadisticasLamborghini.add(jTextField49, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 150, 20));
+        textEUtilityLam.setEditable(false);
+        textEUtilityLam.setBackground(new java.awt.Color(255, 255, 255));
+        textEUtilityLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textEUtilityLam.setForeground(new java.awt.Color(0, 0, 0));
+        textEUtilityLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textEUtilityLam.setToolTipText("");
+        panelEstadisticasLamborghini.add(textEUtilityLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 150, 20));
 
-        jTextField50.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField50.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jTextField50.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField50.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField50.setToolTipText("");
-        panelEstadisticasLamborghini.add(jTextField50, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 150, 20));
+        textECostLam.setEditable(false);
+        textECostLam.setBackground(new java.awt.Color(255, 255, 255));
+        textECostLam.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        textECostLam.setForeground(new java.awt.Color(0, 0, 0));
+        textECostLam.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        textECostLam.setToolTipText("");
+        panelEstadisticasLamborghini.add(textECostLam, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 150, 20));
 
         panelLamborghini.add(panelEstadisticasLamborghini, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 340, 140));
 
-        StartButton.setBackground(new java.awt.Color(204, 204, 204));
-        StartButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        StartButton.setForeground(new java.awt.Color(0, 0, 0));
-        StartButton.setText("Cargar Valores Iniciales");
-        StartButton.setToolTipText("");
-        StartButton.addActionListener(new java.awt.event.ActionListener() {
+        btnLoadInitParameters.setBackground(new java.awt.Color(204, 204, 204));
+        btnLoadInitParameters.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnLoadInitParameters.setForeground(new java.awt.Color(0, 0, 0));
+        btnLoadInitParameters.setText("Cargar Valores Iniciales");
+        btnLoadInitParameters.setToolTipText("");
+        btnLoadInitParameters.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                StartButtonActionPerformed(evt);
+                btnLoadInitParametersActionPerformed(evt);
             }
         });
-        panelLamborghini.add(StartButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 640, 340, 30));
+        panelLamborghini.add(btnLoadInitParameters, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 640, 340, 30));
 
-        StartButton2.setBackground(new java.awt.Color(204, 204, 204));
-        StartButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        StartButton2.setForeground(new java.awt.Color(0, 0, 0));
-        StartButton2.setText("Ver Grafica");
-        StartButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnWatchGraphic.setBackground(new java.awt.Color(204, 204, 204));
+        btnWatchGraphic.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnWatchGraphic.setForeground(new java.awt.Color(0, 0, 0));
+        btnWatchGraphic.setText("Ver Grafica");
+        btnWatchGraphic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                StartButton2ActionPerformed(evt);
+                btnWatchGraphicActionPerformed(evt);
             }
         });
-        panelLamborghini.add(StartButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 340, 30));
+        panelLamborghini.add(btnWatchGraphic, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 340, 30));
 
         panelPantalla.add(panelLamborghini, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, 683, 690));
 
@@ -1579,17 +1644,9 @@ public class MainView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void btnMoreChasisBuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoreChasisBuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnMoreChasisBuActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -1631,53 +1688,42 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton15ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    private void btnStopSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStopSimulationActionPerformed
+        this.vpBu.stopPlant();
+        this.vpLa.stopPlant();
+    }//GEN-LAST:event_btnStopSimulationActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void btnLoadInitParametersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadInitParametersActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_btnLoadInitParametersActionPerformed
 
-    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
+    private void btnWatchGraphicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWatchGraphicActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField17ActionPerformed
-
-    private void StopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StopButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_StopButtonActionPerformed
-
-    private void StartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_StartButtonActionPerformed
-
-    private void StartButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_StartButton2ActionPerformed
+    }//GEN-LAST:event_btnWatchGraphicActionPerformed
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_salirActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnMinusChasisBuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinusChasisBuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnMinusChasisBuActionPerformed
 
-    private void jTextField51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField51ActionPerformed
+    private void textDirectorLamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textDirectorLamActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField51ActionPerformed
+    }//GEN-LAST:event_textDirectorLamActionPerformed
 
-    private void jTextField52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField52ActionPerformed
+    private void textCChasisLamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCChasisLamActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField52ActionPerformed
+    }//GEN-LAST:event_textCChasisLamActionPerformed
 
-    private void jTextField53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField53ActionPerformed
+    private void textCCarroceriaLamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCCarroceriaLamActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField53ActionPerformed
+    }//GEN-LAST:event_textCCarroceriaLamActionPerformed
 
-    private void jTextField54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField54ActionPerformed
+    private void textCMotorLamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCMotorLamActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField54ActionPerformed
+    }//GEN-LAST:event_textCMotorLamActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
         // TODO add your handling code here:
@@ -1727,52 +1773,92 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton36ActionPerformed
 
-    private void jTextField60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField60ActionPerformed
+    private void textTotalWorkersLamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textTotalWorkersLamActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField60ActionPerformed
+    }//GEN-LAST:event_textTotalWorkersLamActionPerformed
+
+    private void btnStartSimulationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartSimulationActionPerformed
+        vpBu = new VehiclePlant("BUGATTI",
+                this.dataInit.getDurationInS(), 
+                this.dataInit.getDeadline(),
+                this.dataInit.getMountChasisInit(),
+                this.dataInit.getMountCarroceriaInit(),
+                this.dataInit.getMountMotorInit(),
+                this.dataInit.getMountRuedaInit(),
+                this.dataInit.getMountAccesorioInit(),
+                this.dataInit.getMountEnsambladorInit(), this);
+        
+        vpLa = new VehiclePlant("LAMBORGHINI",
+                this.dataInit.getDurationInS(), 
+                this.dataInit.getDeadline(),
+                this.dataInit.getMountChasisInit(),
+                this.dataInit.getMountCarroceriaInit(),
+                this.dataInit.getMountMotorInit(),
+                this.dataInit.getMountRuedaInit(),
+                this.dataInit.getMountAccesorioInit(),
+                this.dataInit.getMountEnsambladorInit(), this);
+        
+        vpBu.start();
+        vpLa.start();
+        
+        this.updateDataView();
+    }//GEN-LAST:event_btnStartSimulationActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainView().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new MainView().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Copyright;
-    private javax.swing.JButton StartButton;
-    private javax.swing.JButton StartButton1;
-    private javax.swing.JButton StartButton2;
-    private javax.swing.JButton StopButton;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnLoadInitParameters;
+    private javax.swing.JLabel btnMinusAccesorioLam;
+    private javax.swing.JLabel btnMinusCarroceriaLam;
+    private javax.swing.JButton btnMinusChasisBu;
+    private javax.swing.JLabel btnMinusChasisLam;
+    private javax.swing.JLabel btnMinusEnsambladorLam;
+    private javax.swing.JLabel btnMinusMotorLam;
+    private javax.swing.JLabel btnMinusRuedaLam;
+    private javax.swing.JLabel btnMoreAccesorioLam;
+    private javax.swing.JLabel btnMoreCarroceriaLam;
+    private javax.swing.JButton btnMoreChasisBu;
+    private javax.swing.JLabel btnMoreChasisLam;
+    private javax.swing.JLabel btnMoreEnsambladorLam;
+    private javax.swing.JLabel btnMoreMotorLam;
+    private javax.swing.JLabel btnMoreRuedaLam;
+    private javax.swing.JButton btnStartSimulation;
+    private javax.swing.JButton btnStopSimulation;
+    private javax.swing.JButton btnWatchGraphic;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
@@ -1783,7 +1869,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton31;
     private javax.swing.JButton jButton32;
@@ -1796,80 +1881,18 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField29;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField32;
-    private javax.swing.JTextField jTextField36;
-    private javax.swing.JTextField jTextField37;
-    private javax.swing.JTextField jTextField38;
-    private javax.swing.JTextField jTextField39;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField40;
-    private javax.swing.JTextField jTextField41;
-    private javax.swing.JTextField jTextField42;
-    private javax.swing.JTextField jTextField43;
-    private javax.swing.JTextField jTextField44;
-    private javax.swing.JTextField jTextField45;
-    private javax.swing.JTextField jTextField46;
-    private javax.swing.JTextField jTextField47;
-    private javax.swing.JTextField jTextField48;
-    private javax.swing.JTextField jTextField49;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField50;
-    private javax.swing.JTextField jTextField51;
-    private javax.swing.JTextField jTextField52;
-    private javax.swing.JTextField jTextField53;
-    private javax.swing.JTextField jTextField54;
-    private javax.swing.JTextField jTextField55;
-    private javax.swing.JTextField jTextField56;
-    private javax.swing.JTextField jTextField57;
-    private javax.swing.JTextField jTextField58;
     private javax.swing.JTextField jTextField59;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField60;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JPanel panelAlmacenBugatti;
     private javax.swing.JPanel panelAlmacenLamborghini;
     private javax.swing.JPanel panelBugatti;
@@ -1886,6 +1909,54 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JPanel panelTituloBugatti;
     private javax.swing.JPanel panelTituloLamborghini;
     private javax.swing.JButton salir;
+    private javax.swing.JTextField textAAccesorioBu;
+    private javax.swing.JTextField textAAccesorioLam;
+    private javax.swing.JTextField textACarroceriaBu;
+    private javax.swing.JTextField textACarroceriaLam;
+    private javax.swing.JTextField textAChasisBu;
+    private javax.swing.JTextField textAChasisLam;
+    private javax.swing.JTextField textAMotorBu;
+    private javax.swing.JTextField textAMotorLam;
+    private javax.swing.JTextField textARuedaBu;
+    private javax.swing.JTextField textARuedaLam;
+    private javax.swing.JTextField textAVeSpecialBu;
+    private javax.swing.JTextField textAVeSpecialLam;
+    private javax.swing.JTextField textAVeStandardBu;
+    private javax.swing.JTextField textAVeStandardLam;
+    private javax.swing.JTextField textCAccesorioBu;
+    private javax.swing.JTextField textCAccesorioLam;
+    private javax.swing.JTextField textCCarroceriaBu;
+    private javax.swing.JTextField textCCarroceriaLam;
+    private javax.swing.JTextField textCChasisBu;
+    private javax.swing.JTextField textCChasisLam;
+    private javax.swing.JTextField textCMotorBu;
+    private javax.swing.JTextField textCMotorLam;
+    private javax.swing.JTextField textCRuedaBu;
+    private javax.swing.JTextField textCRuedaLam;
+    private javax.swing.JTextField textDaysRemainingBu;
+    private javax.swing.JTextField textDaysRemainingLam;
+    private javax.swing.JTextField textDirectorBu;
+    private javax.swing.JTextField textDirectorLam;
+    private javax.swing.JTextField textDiscountGerenteBu;
+    private javax.swing.JTextField textDiscountGerenteLam;
+    private javax.swing.JTextField textECostBu;
+    private javax.swing.JTextField textECostLam;
+    private javax.swing.JTextField textEEarningsBu;
+    private javax.swing.JTextField textEEarningsLam;
+    private javax.swing.JTextField textEUtilityBu;
+    private javax.swing.JTextField textEUtilityLam;
+    private javax.swing.JTextField textEnsambladorBu;
+    private javax.swing.JTextField textEnsambladorLam;
+    private javax.swing.JTextField textFoulGerenteBu;
+    private javax.swing.JTextField textFoulGerenteLam;
+    private javax.swing.JTextField textGerenteBu;
+    private javax.swing.JTextField textGerenteLam;
+    private javax.swing.JTextField textStatusDirectorBu;
+    private javax.swing.JTextField textStatusDirectorLam;
+    private javax.swing.JTextField textStatusGerenteBu;
+    private javax.swing.JTextField textStatusGerenteLam;
+    private javax.swing.JTextField textTotalWorkersBu;
+    private javax.swing.JTextField textTotalWorkersLam;
     private javax.swing.JLabel titulo10;
     private javax.swing.JLabel titulo11;
     private javax.swing.JLabel titulo12;
