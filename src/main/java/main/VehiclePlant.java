@@ -102,13 +102,12 @@ public class VehiclePlant extends Thread {
             for (int hour = 0; hour < this.dayDurationInMs; hour += (this.dayDurationInMs / 24)) {
                 try {
                     this.hourPassed = hour;
-                    this.mV.updateDataView();
                     
                     if (this.updateWorkersNow) {
                         this.updateWorkers();
                     }
-                    
                     Thread.sleep((this.dayDurationInMs / 24));
+                    this.mV.updateDataView();
                 } catch (InterruptedException e) {
                     System.out.println(e);
                 }

@@ -206,7 +206,7 @@ public class Worker extends Thread {
                 this.checkAccounting();
                 sleep((hour / 2));
             } else {
-                this.statusGerente = "Actualizando dias restantes para entrega";
+                this.statusGerente = "Actualizando dias para entrega";
                 this.updateRemainingDays();
                 if (this.counterHoursGerente == (hour * 24)) {
                     this.counterHoursGerente = 0;
@@ -255,7 +255,6 @@ public class Worker extends Thread {
                     for (double i = minutes; i <= (minutes*25); i += minutes) {
                         this.statusDirector = "Observando al gerente";
                         if (this.vp.checkWorker("GERENTE").statusGerente.equals("Viendo carreras") && checkFoul) {
-                            this.foulGerente++;
                             this.discountGerente(this.vp.checkWorker("GERENTE"), 50);
                             checkFoul = false;
                         } 
@@ -275,7 +274,7 @@ public class Worker extends Thread {
     }
 
     private void checkAccounting() {
-        // AQUÍ MOVERÁ TODO LO RELACIONADO A COSTOS A LA VISTA DE LA INTERFAZ
+        this.vp.plantUtility = this.vp.earnings - this.vp.operCost;
     }
 
     private void updateRemainingDays() {
@@ -292,7 +291,9 @@ public class Worker extends Thread {
     
     private void discountGerente(Worker w, int mount) {
         w.currentGain -= mount;
-        this.moneyDiscount += mount;
+        w.moneyDiscount += mount;
+        w.foulGerente++;
+        
     }
 
 }
