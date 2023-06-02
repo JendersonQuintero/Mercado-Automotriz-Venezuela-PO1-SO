@@ -7,6 +7,7 @@ package main;
 import interfaces.MainView;
 import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -141,6 +142,7 @@ public class VehiclePlant extends Thread {
             this.updateWorkersNow = true;
         } else {
             System.out.println("Capacidad maxima de trabajadores en la planta");
+            JOptionPane.showMessageDialog(null, "Capacidad maxima de trabajadores en la planta", "Empleados a tope",0);
         }
     }
 
@@ -164,6 +166,7 @@ public class VehiclePlant extends Thread {
             this.updateWorkersNow = true;
         } else {
             System.out.println("Debe existir al menos un trabajador en la linea");
+            JOptionPane.showMessageDialog(null, "Debe existir al menos un trabajador en la linea", "Cero empleados",0);
         }
     }
 
